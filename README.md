@@ -5,7 +5,8 @@
   pod 'YYKit'
   pod 'MJRefresh'
   SSZipArchive
-  
+  LBXScan
+
 ###   Custom
 [TPKeyboardAvoiding](https://github.com/michaeltyson/TPKeyboardAvoiding)
 []()
