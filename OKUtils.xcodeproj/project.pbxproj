@@ -1,0 +1,660 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		04F00FB81F4D2C60003DF5AA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F00FB71F4D2C60003DF5AA /* main.m */; };
+		04F00FBB1F4D2C60003DF5AA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F00FBA1F4D2C60003DF5AA /* AppDelegate.m */; };
+		04F00FBE1F4D2C60003DF5AA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F00FBD1F4D2C60003DF5AA /* ViewController.m */; };
+		04F00FC11F4D2C60003DF5AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04F00FBF1F4D2C60003DF5AA /* Main.storyboard */; };
+		04F00FC31F4D2C60003DF5AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04F00FC21F4D2C60003DF5AA /* Assets.xcassets */; };
+		04F00FC61F4D2C60003DF5AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04F00FC41F4D2C60003DF5AA /* LaunchScreen.storyboard */; };
+		04F00FD11F4D2C60003DF5AA /* OKUtilsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F00FD01F4D2C60003DF5AA /* OKUtilsTests.m */; };
+		04F00FDC1F4D2FBC003DF5AA /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 04F00FDB1F4D2FBC003DF5AA /* README.md */; };
+		04F00FE01F4D5140003DF5AA /* OKUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F00FDF1F4D5140003DF5AA /* OKUtils.m */; };
+		04F00FEF1F4D5DFC003DF5AA /* OKUtils_Runtime.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F00FEE1F4D5DFC003DF5AA /* OKUtils_Runtime.m */; };
+		04F00FF21F4D5E54003DF5AA /* OKUtils_NSString.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F00FF11F4D5E54003DF5AA /* OKUtils_NSString.m */; };
+		04F00FF51F4D5EC2003DF5AA /* OKUtils_Regex.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F00FF41F4D5EC2003DF5AA /* OKUtils_Regex.m */; };
+		04F00FF91F4D5F58003DF5AA /* OKUtils_UIImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F00FF81F4D5F58003DF5AA /* OKUtils_UIImage.m */; };
+		04F00FFC1F4D5F94003DF5AA /* OKUtils_UIDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F00FFB1F4D5F94003DF5AA /* OKUtils_UIDevice.m */; };
+		04F00FFF1F4D5FB4003DF5AA /* OKUtils_UIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F00FFE1F4D5FB4003DF5AA /* OKUtils_UIView.m */; };
+		04F010021F4D5FC5003DF5AA /* OKUtils_UIApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F010011F4D5FC5003DF5AA /* OKUtils_UIApplication.m */; };
+		04F010051F4D5FF4003DF5AA /* OKUtils_UITextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F010041F4D5FF4003DF5AA /* OKUtils_UITextField.m */; };
+		1B8FFCCADE6E054137FDEDA5 /* libPods-OKUtilsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A8804FED252BE6893E859E3B /* libPods-OKUtilsTests.a */; };
+		B372248063E10830BDE7C118 /* libPods-OKUtils.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 77FAE9506336C3176D69E94A /* libPods-OKUtils.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		04F00FCD1F4D2C60003DF5AA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04F00FAB1F4D2C60003DF5AA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 04F00FB21F4D2C60003DF5AA;
+			remoteInfo = OKUtils;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		04F00FB31F4D2C60003DF5AA /* OKUtils.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OKUtils.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		04F00FB71F4D2C60003DF5AA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		04F00FB91F4D2C60003DF5AA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		04F00FBA1F4D2C60003DF5AA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		04F00FBC1F4D2C60003DF5AA /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		04F00FBD1F4D2C60003DF5AA /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		04F00FC01F4D2C60003DF5AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		04F00FC21F4D2C60003DF5AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		04F00FC51F4D2C60003DF5AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		04F00FC71F4D2C60003DF5AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04F00FCC1F4D2C60003DF5AA /* OKUtilsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OKUtilsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		04F00FD01F4D2C60003DF5AA /* OKUtilsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OKUtilsTests.m; sourceTree = "<group>"; };
+		04F00FD21F4D2C60003DF5AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04F00FDB1F4D2FBC003DF5AA /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		04F00FDE1F4D5140003DF5AA /* OKUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OKUtils.h; sourceTree = "<group>"; };
+		04F00FDF1F4D5140003DF5AA /* OKUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OKUtils.m; sourceTree = "<group>"; };
+		04F00FE11F4D51B3003DF5AA /* OKMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OKMacro.h; sourceTree = "<group>"; };
+		04F00FED1F4D5DFC003DF5AA /* OKUtils_Runtime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OKUtils_Runtime.h; sourceTree = "<group>"; };
+		04F00FEE1F4D5DFC003DF5AA /* OKUtils_Runtime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OKUtils_Runtime.m; sourceTree = "<group>"; };
+		04F00FF01F4D5E54003DF5AA /* OKUtils_NSString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OKUtils_NSString.h; sourceTree = "<group>"; };
+		04F00FF11F4D5E54003DF5AA /* OKUtils_NSString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OKUtils_NSString.m; sourceTree = "<group>"; };
+		04F00FF31F4D5EC2003DF5AA /* OKUtils_Regex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OKUtils_Regex.h; sourceTree = "<group>"; };
+		04F00FF41F4D5EC2003DF5AA /* OKUtils_Regex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OKUtils_Regex.m; sourceTree = "<group>"; };
+		04F00FF61F4D5F0D003DF5AA /* OKUtils_Foundation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OKUtils_Foundation.h; sourceTree = "<group>"; };
+		04F00FF71F4D5F58003DF5AA /* OKUtils_UIImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OKUtils_UIImage.h; sourceTree = "<group>"; };
+		04F00FF81F4D5F58003DF5AA /* OKUtils_UIImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OKUtils_UIImage.m; sourceTree = "<group>"; };
+		04F00FFA1F4D5F94003DF5AA /* OKUtils_UIDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OKUtils_UIDevice.h; sourceTree = "<group>"; };
+		04F00FFB1F4D5F94003DF5AA /* OKUtils_UIDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OKUtils_UIDevice.m; sourceTree = "<group>"; };
+		04F00FFD1F4D5FB4003DF5AA /* OKUtils_UIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OKUtils_UIView.h; sourceTree = "<group>"; };
+		04F00FFE1F4D5FB4003DF5AA /* OKUtils_UIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OKUtils_UIView.m; sourceTree = "<group>"; };
+		04F010001F4D5FC5003DF5AA /* OKUtils_UIApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OKUtils_UIApplication.h; sourceTree = "<group>"; };
+		04F010011F4D5FC5003DF5AA /* OKUtils_UIApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OKUtils_UIApplication.m; sourceTree = "<group>"; };
+		04F010031F4D5FF4003DF5AA /* OKUtils_UITextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OKUtils_UITextField.h; sourceTree = "<group>"; };
+		04F010041F4D5FF4003DF5AA /* OKUtils_UITextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OKUtils_UITextField.m; sourceTree = "<group>"; };
+		04F010061F4D60B4003DF5AA /* OKUtils_UIKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OKUtils_UIKit.h; sourceTree = "<group>"; };
+		0F2FBF7563D1DF70F6A32511 /* Pods-OKUtils.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OKUtils.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OKUtils/Pods-OKUtils.debug.xcconfig"; sourceTree = "<group>"; };
+		77FAE9506336C3176D69E94A /* libPods-OKUtils.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OKUtils.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A73E067D2598173A1F79CC7 /* Pods-OKUtils.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OKUtils.release.xcconfig"; path = "Pods/Target Support Files/Pods-OKUtils/Pods-OKUtils.release.xcconfig"; sourceTree = "<group>"; };
+		93184634408E1FCCEFFB1F29 /* Pods-OKUtilsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OKUtilsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OKUtilsTests/Pods-OKUtilsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A8804FED252BE6893E859E3B /* libPods-OKUtilsTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OKUtilsTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F002F7BDD049AB0A8B16D794 /* Pods-OKUtilsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OKUtilsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OKUtilsTests/Pods-OKUtilsTests.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		04F00FB01F4D2C60003DF5AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B372248063E10830BDE7C118 /* libPods-OKUtils.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04F00FC91F4D2C60003DF5AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B8FFCCADE6E054137FDEDA5 /* libPods-OKUtilsTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		04F00FAA1F4D2C60003DF5AA = {
+			isa = PBXGroup;
+			children = (
+				04F00FDB1F4D2FBC003DF5AA /* README.md */,
+				04F00FB51F4D2C60003DF5AA /* OKUtils */,
+				04F00FCF1F4D2C60003DF5AA /* OKUtilsTests */,
+				04F00FB41F4D2C60003DF5AA /* Products */,
+				BBD39F9405478869E9881156 /* Pods */,
+				D0BEF2A4A4AB2A86795B3AE0 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		04F00FB41F4D2C60003DF5AA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				04F00FB31F4D2C60003DF5AA /* OKUtils.app */,
+				04F00FCC1F4D2C60003DF5AA /* OKUtilsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		04F00FB51F4D2C60003DF5AA /* OKUtils */ = {
+			isa = PBXGroup;
+			children = (
+				04F00FDD1F4D5119003DF5AA /* OKUtils */,
+				04F00FB91F4D2C60003DF5AA /* AppDelegate.h */,
+				04F00FBA1F4D2C60003DF5AA /* AppDelegate.m */,
+				04F00FBC1F4D2C60003DF5AA /* ViewController.h */,
+				04F00FBD1F4D2C60003DF5AA /* ViewController.m */,
+				04F00FBF1F4D2C60003DF5AA /* Main.storyboard */,
+				04F00FC21F4D2C60003DF5AA /* Assets.xcassets */,
+				04F00FC41F4D2C60003DF5AA /* LaunchScreen.storyboard */,
+				04F00FC71F4D2C60003DF5AA /* Info.plist */,
+				04F00FB61F4D2C60003DF5AA /* Supporting Files */,
+			);
+			path = OKUtils;
+			sourceTree = "<group>";
+		};
+		04F00FB61F4D2C60003DF5AA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				04F00FB71F4D2C60003DF5AA /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		04F00FCF1F4D2C60003DF5AA /* OKUtilsTests */ = {
+			isa = PBXGroup;
+			children = (
+				04F00FD01F4D2C60003DF5AA /* OKUtilsTests.m */,
+				04F00FD21F4D2C60003DF5AA /* Info.plist */,
+			);
+			path = OKUtilsTests;
+			sourceTree = "<group>";
+		};
+		04F00FDD1F4D5119003DF5AA /* OKUtils */ = {
+			isa = PBXGroup;
+			children = (
+				04F00FE91F4D5DA4003DF5AA /* UIKit */,
+				04F00FE81F4D5D8A003DF5AA /* Foundation */,
+				04F00FE11F4D51B3003DF5AA /* OKMacro.h */,
+				04F00FDE1F4D5140003DF5AA /* OKUtils.h */,
+				04F00FDF1F4D5140003DF5AA /* OKUtils.m */,
+			);
+			path = OKUtils;
+			sourceTree = "<group>";
+		};
+		04F00FE81F4D5D8A003DF5AA /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				04F00FF61F4D5F0D003DF5AA /* OKUtils_Foundation.h */,
+				04F00FED1F4D5DFC003DF5AA /* OKUtils_Runtime.h */,
+				04F00FEE1F4D5DFC003DF5AA /* OKUtils_Runtime.m */,
+				04F00FF01F4D5E54003DF5AA /* OKUtils_NSString.h */,
+				04F00FF11F4D5E54003DF5AA /* OKUtils_NSString.m */,
+				04F00FF31F4D5EC2003DF5AA /* OKUtils_Regex.h */,
+				04F00FF41F4D5EC2003DF5AA /* OKUtils_Regex.m */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		04F00FE91F4D5DA4003DF5AA /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				04F010061F4D60B4003DF5AA /* OKUtils_UIKit.h */,
+				04F00FF71F4D5F58003DF5AA /* OKUtils_UIImage.h */,
+				04F00FF81F4D5F58003DF5AA /* OKUtils_UIImage.m */,
+				04F00FFA1F4D5F94003DF5AA /* OKUtils_UIDevice.h */,
+				04F00FFB1F4D5F94003DF5AA /* OKUtils_UIDevice.m */,
+				04F00FFD1F4D5FB4003DF5AA /* OKUtils_UIView.h */,
+				04F00FFE1F4D5FB4003DF5AA /* OKUtils_UIView.m */,
+				04F010001F4D5FC5003DF5AA /* OKUtils_UIApplication.h */,
+				04F010011F4D5FC5003DF5AA /* OKUtils_UIApplication.m */,
+				04F010031F4D5FF4003DF5AA /* OKUtils_UITextField.h */,
+				04F010041F4D5FF4003DF5AA /* OKUtils_UITextField.m */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		BBD39F9405478869E9881156 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0F2FBF7563D1DF70F6A32511 /* Pods-OKUtils.debug.xcconfig */,
+				8A73E067D2598173A1F79CC7 /* Pods-OKUtils.release.xcconfig */,
+				93184634408E1FCCEFFB1F29 /* Pods-OKUtilsTests.debug.xcconfig */,
+				F002F7BDD049AB0A8B16D794 /* Pods-OKUtilsTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D0BEF2A4A4AB2A86795B3AE0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				77FAE9506336C3176D69E94A /* libPods-OKUtils.a */,
+				A8804FED252BE6893E859E3B /* libPods-OKUtilsTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		04F00FB21F4D2C60003DF5AA /* OKUtils */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04F00FD51F4D2C60003DF5AA /* Build configuration list for PBXNativeTarget "OKUtils" */;
+			buildPhases = (
+				6DEC5BAB47DDCCF8EA0D61C7 /* [CP] Check Pods Manifest.lock */,
+				04F00FAF1F4D2C60003DF5AA /* Sources */,
+				04F00FB01F4D2C60003DF5AA /* Frameworks */,
+				04F00FB11F4D2C60003DF5AA /* Resources */,
+				AC82E445172C9004D3360E4F /* [CP] Embed Pods Frameworks */,
+				6FF8EC773BCC50F5904C3DF4 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OKUtils;
+			productName = OKUtils;
+			productReference = 04F00FB31F4D2C60003DF5AA /* OKUtils.app */;
+			productType = "com.apple.product-type.application";
+		};
+		04F00FCB1F4D2C60003DF5AA /* OKUtilsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04F00FD81F4D2C60003DF5AA /* Build configuration list for PBXNativeTarget "OKUtilsTests" */;
+			buildPhases = (
+				48C49F4DE1A6D9D7E5CC408A /* [CP] Check Pods Manifest.lock */,
+				04F00FC81F4D2C60003DF5AA /* Sources */,
+				04F00FC91F4D2C60003DF5AA /* Frameworks */,
+				04F00FCA1F4D2C60003DF5AA /* Resources */,
+				7565FAE0F41BE3C3ABEFCA05 /* [CP] Embed Pods Frameworks */,
+				88F1B00AD2847C2EDE4B3D2B /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				04F00FCE1F4D2C60003DF5AA /* PBXTargetDependency */,
+			);
+			name = OKUtilsTests;
+			productName = OKUtilsTests;
+			productReference = 04F00FCC1F4D2C60003DF5AA /* OKUtilsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		04F00FAB1F4D2C60003DF5AA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = HERB;
+				TargetAttributes = {
+					04F00FB21F4D2C60003DF5AA = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = GQNQ7XRR23;
+						ProvisioningStyle = Automatic;
+					};
+					04F00FCB1F4D2C60003DF5AA = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = GQNQ7XRR23;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 04F00FB21F4D2C60003DF5AA;
+					};
+				};
+			};
+			buildConfigurationList = 04F00FAE1F4D2C60003DF5AA /* Build configuration list for PBXProject "OKUtils" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 04F00FAA1F4D2C60003DF5AA;
+			productRefGroup = 04F00FB41F4D2C60003DF5AA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				04F00FB21F4D2C60003DF5AA /* OKUtils */,
+				04F00FCB1F4D2C60003DF5AA /* OKUtilsTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		04F00FB11F4D2C60003DF5AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04F00FC61F4D2C60003DF5AA /* LaunchScreen.storyboard in Resources */,
+				04F00FC31F4D2C60003DF5AA /* Assets.xcassets in Resources */,
+				04F00FC11F4D2C60003DF5AA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04F00FCA1F4D2C60003DF5AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		48C49F4DE1A6D9D7E5CC408A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6DEC5BAB47DDCCF8EA0D61C7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6FF8EC773BCC50F5904C3DF4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OKUtils/Pods-OKUtils-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7565FAE0F41BE3C3ABEFCA05 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OKUtilsTests/Pods-OKUtilsTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		88F1B00AD2847C2EDE4B3D2B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OKUtilsTests/Pods-OKUtilsTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AC82E445172C9004D3360E4F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OKUtils/Pods-OKUtils-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		04F00FAF1F4D2C60003DF5AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04F00FF21F4D5E54003DF5AA /* OKUtils_NSString.m in Sources */,
+				04F00FF91F4D5F58003DF5AA /* OKUtils_UIImage.m in Sources */,
+				04F00FFF1F4D5FB4003DF5AA /* OKUtils_UIView.m in Sources */,
+				04F00FF51F4D5EC2003DF5AA /* OKUtils_Regex.m in Sources */,
+				04F00FDC1F4D2FBC003DF5AA /* README.md in Sources */,
+				04F00FEF1F4D5DFC003DF5AA /* OKUtils_Runtime.m in Sources */,
+				04F00FBE1F4D2C60003DF5AA /* ViewController.m in Sources */,
+				04F00FBB1F4D2C60003DF5AA /* AppDelegate.m in Sources */,
+				04F00FFC1F4D5F94003DF5AA /* OKUtils_UIDevice.m in Sources */,
+				04F00FE01F4D5140003DF5AA /* OKUtils.m in Sources */,
+				04F010021F4D5FC5003DF5AA /* OKUtils_UIApplication.m in Sources */,
+				04F00FB81F4D2C60003DF5AA /* main.m in Sources */,
+				04F010051F4D5FF4003DF5AA /* OKUtils_UITextField.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04F00FC81F4D2C60003DF5AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04F00FD11F4D2C60003DF5AA /* OKUtilsTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		04F00FCE1F4D2C60003DF5AA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 04F00FB21F4D2C60003DF5AA /* OKUtils */;
+			targetProxy = 04F00FCD1F4D2C60003DF5AA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		04F00FBF1F4D2C60003DF5AA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04F00FC01F4D2C60003DF5AA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		04F00FC41F4D2C60003DF5AA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04F00FC51F4D2C60003DF5AA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		04F00FD31F4D2C60003DF5AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		04F00FD41F4D2C60003DF5AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		04F00FD61F4D2C60003DF5AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0F2FBF7563D1DF70F6A32511 /* Pods-OKUtils.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = GQNQ7XRR23;
+				INFOPLIST_FILE = OKUtils/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Herb.OKUtils;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		04F00FD71F4D2C60003DF5AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A73E067D2598173A1F79CC7 /* Pods-OKUtils.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = GQNQ7XRR23;
+				INFOPLIST_FILE = OKUtils/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Herb.OKUtils;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		04F00FD91F4D2C60003DF5AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 93184634408E1FCCEFFB1F29 /* Pods-OKUtilsTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = GQNQ7XRR23;
+				INFOPLIST_FILE = OKUtilsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Herb.OKUtilsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OKUtils.app/OKUtils";
+			};
+			name = Debug;
+		};
+		04F00FDA1F4D2C60003DF5AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F002F7BDD049AB0A8B16D794 /* Pods-OKUtilsTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = GQNQ7XRR23;
+				INFOPLIST_FILE = OKUtilsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Herb.OKUtilsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OKUtils.app/OKUtils";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		04F00FAE1F4D2C60003DF5AA /* Build configuration list for PBXProject "OKUtils" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04F00FD31F4D2C60003DF5AA /* Debug */,
+				04F00FD41F4D2C60003DF5AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04F00FD51F4D2C60003DF5AA /* Build configuration list for PBXNativeTarget "OKUtils" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04F00FD61F4D2C60003DF5AA /* Debug */,
+				04F00FD71F4D2C60003DF5AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04F00FD81F4D2C60003DF5AA /* Build configuration list for PBXNativeTarget "OKUtilsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04F00FD91F4D2C60003DF5AA /* Debug */,
+				04F00FDA1F4D2C60003DF5AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 04F00FAB1F4D2C60003DF5AA /* Project object */;
+}

@@ -1,0 +1,32 @@
+PODS:
+  - SDWebImage (4.1.0):
+    - SDWebImage/Core (= 4.1.0)
+  - SDWebImage/Core (4.1.0)
+  - SVProgressHUD (2.1.2)
+  - XMNetworking (1.0.2):
+    - XMNetworking/Core (= 1.0.2)
+    - XMNetworking/Lib (= 1.0.2)
+  - XMNetworking/Core (1.0.2):
+    - XMNetworking/Lib/AFNetworking-3.1.0
+  - XMNetworking/Lib (1.0.2):
+    - XMNetworking/Lib/AFNetworking-3.1.0 (= 1.0.2)
+  - XMNetworking/Lib/AFNetworking-3.1.0 (1.0.2)
+  - YYKit (1.0.9):
+    - YYKit/no-arc (= 1.0.9)
+  - YYKit/no-arc (1.0.9)
+
+DEPENDENCIES:
+  - SDWebImage
+  - SVProgressHUD
+  - XMNetworking
+  - YYKit
+
+SPEC CHECKSUMS:
+  SDWebImage: 0e435c14e402a6730315a0fb79f95e68654d55a4
+  SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
+  XMNetworking: bcc1d167c4386fb6bfefb0d6c7087f09333c2e09
+  YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
+
+PODFILE CHECKSUM: 885edadd7befcf418ebf6948a26f8a0fd5da158b
+
+COCOAPODS: 1.2.0
