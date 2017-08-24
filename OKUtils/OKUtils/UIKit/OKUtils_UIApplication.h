@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 
-UIKIT_EXTERN void OKRateTuniuAPP(NSString *appId);
+UIKIT_EXTERN void OKScoreAPP(NSString *appId);
 

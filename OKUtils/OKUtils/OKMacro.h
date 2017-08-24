@@ -16,9 +16,8 @@
 #if defined(DEBUG) && !defined(NDEBUG)
 #define OKKeywordify autoreleasepool {}
 #else
-#define OKKeywordify try {} @catch (...) {}
+#define OKKeywordify try {} @finally {}
 #endif
-
 
 #ifdef OKLOG_ENABLED
 #define __OKLOG(s, ...) NSLog(@"%@",[NSString stringWithFormat:(s), ##__VA_ARGS__])
@@ -38,6 +37,17 @@ __LINE__, [NSString stringWithFormat:(id), ##__VA_ARGS__])
     _Pragma("clang diagnostic ignored \"-Wshadow\"") \
     __strong typeof(self) self = OKWeak_##self; \
     _Pragma("clang diagnostic pop")
+
+
+#define OKTABBAR_H        49.0f
+#define OKSTATUSBAR_H     20.0f
+#define OKNAVBAR_H        64.5f
+
+/** 获取屏幕尺寸、宽度、高度 */
+#define OKSCREEN_RECT   ([[UIScreen mainScreen] bounds])
+#define OKSCREEN_SIZE   ([UIScreen mainScreen].bounds.size)
+#define OKSCREEN_WIDTH  ([UIScreen mainScreen].bounds.size.width)
+#define OKSCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
 
 /// 安全执行block
 #define OKBLOCK_SAFE_EXEC(block, ...) if(block){block(__VA_ARGS__);}

@@ -8,7 +8,7 @@
 
 #import "OKUtils_UIApplication.h"
 
-void OKRateTuniuAPP(NSString *appId)
+void OKScoreAPP(NSString *appId)
 {
     NSString *urlString = [NSString stringWithFormat:@"https://itunes.apple.com/app/id%@", appId];
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:urlString]];

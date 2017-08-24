@@ -36,6 +36,8 @@
     [arr setObject:current.subscriberCellularProvider.isoCountryCode forKey:@"isoCountryCode"];
     [arr setObject:[NSNumber numberWithBool:current.subscriberCellularProvider.allowsVOIP] forKey:@"allowsVOIP"];
     return arr;
+    
+
 }
 
 
