@@ -49,6 +49,9 @@
 #define OKSTATUSBAR_H     20.0f
 #define OKNAVBAR_H        64.5f
 
+#define OKTICK NSDate *startTime = [NSDate date];
+#define OKTOCK NSLog(@"Time:%f", -[startTime timeIntervalSinceNow]);
+
 /** 获取屏幕尺寸、宽度、高度 */
 #define OKSCREEN_RECT   ([[UIScreen mainScreen] bounds])
 #define OKSCREEN_SIZE   ([UIScreen mainScreen].bounds.size)
