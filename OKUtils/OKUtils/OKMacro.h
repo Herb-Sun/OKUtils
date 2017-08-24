@@ -10,7 +10,7 @@
 #define OKMacro_h
 
 #ifndef OKLOG_ENABLED
-#define OKLOG_ENABLED 1
+#define OKLOG_ENABLED DEBUG
 #endif
 
 #if defined(DEBUG) && !defined(NDEBUG)
@@ -19,12 +19,18 @@
 #define OKKeywordify try {} @finally {}
 #endif
 
-#ifdef OKLOG_ENABLED
-#define __OKLOG(s, ...) NSLog(@"%@",[NSString stringWithFormat:(s), ##__VA_ARGS__])
-#define OKLog(id, ...) __OKLOG(@"😱OKLog-> %s::%s::Line:(%d):%@ \n", __FILE__, __FUNCTION__, \
-__LINE__, [NSString stringWithFormat:(id), ##__VA_ARGS__])
+#if OKLOG_ENABLED
+    #define __OKLOG(s, ...) NSLog(@"%@",[NSString stringWithFormat:(s), ##__VA_ARGS__])
+    #define OKLogV() __OKLOG(@"\n✅ {%@} %@ > %s Line:(%d)\n", [NSThread isMainThread] ? @"UI" : @"BG", \
+                                [NSURL URLWithString:@__FILE__].lastPathComponent, __FUNCTION__, __LINE__)
+    #define OKLog(id, ...) __OKLOG(@"\n✅ {%@} %@ > %s Line:(%d): %@ \n", \
+                                    [NSThread isMainThread] ? @"UI" : @"BG", \
+                                    [NSURL URLWithString:@__FILE__].lastPathComponent, \
+                                    __FUNCTION__, __LINE__, \
+                                    [NSString stringWithFormat:(id), ##__VA_ARGS__])
 #else
-#define OKLog(...) do{} while(0)
+    #define OKLogV() do{} while(0)
+    #define OKLog(...) do{} while(0)
 #endif
 
 #define weakify(self) \
