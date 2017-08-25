@@ -277,8 +277,6 @@ NSUInteger OKPhysicalRamSize(void) { return __OKGetSystemInfo(HW_MEMSIZE); }
 /// 内存大小
 NSUInteger OKTotalMemorySize(void) { return __OKGetSystemInfo(HW_PHYSMEM); }
 
-#pragma mark - disk information
-
 long long OKFreeDiskSpace(void) {
     struct statfs buf;
     long long     freespace;
