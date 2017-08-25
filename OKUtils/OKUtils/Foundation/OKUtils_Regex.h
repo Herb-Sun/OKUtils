@@ -10,16 +10,19 @@
 
 /// 验证内容类型
 typedef NS_ENUM(NSInteger, OKValidType) {
-    OKValidNone,           //!< none
-    OKValidNumber,         //!< 纯数字
-    OKValidMobile,         //!< 手机号码
-    OKValidTel,            //!< 座机号码
-    OKValidWord,           //!< 纯字母
-    OKValidWordOrNumber,   //!< 数字或字母
-    OKValidChinese,        //!< 纯汉字
-    OKValidEmail,          //!< E-mail
-    OKValidChinaPassPort,  //!< 中国护照
-    OKValidForeignPassPort,  //!< 外国护照
+    OKValidNone,            //!< none
+    OKValidNumber,          //!< 纯数字
+    OKValidMobile,          //!< 手机号码
+    OKValidTel,             //!< 座机号码
+    OKValidWord,            //!< 纯字母
+    OKValidWordOrNumber,    //!< 数字或字母
+    OKValidChinese,         //!< 纯汉字
+    OKValidEmail,           //!< E-mail
+    OKValidChinaPassPort,   //!< 中国护照
+    OKValidForeignPassPort, //!< 外国护照
+    OKValidIPAddress,       //!< IP地址
+    OKValidURL,             //!< url
+    OKValidIDCard,          //!< 身份证
 };
 
 /**

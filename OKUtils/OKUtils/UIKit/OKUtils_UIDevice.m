@@ -22,32 +22,36 @@
 #import <mach/mach_host.h>
 #import <mach/processor_info.h>
 
+BOOL OKIsiPhone4Inch(void) {
+    return [UIScreen instancesRespondToSelector:@selector(currentMode)] ? [[UIScreen mainScreen] currentMode].size.width == 640 : NO;
+}
+
 /// 判断是否为iPhone
-BOOL isiPhone(void)
+BOOL OKIsiPhone(void)
 {
     return UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone;
 }
 
 /// 判断是否是iPad
-BOOL isiPad(void)
+BOOL OKIsiPad(void)
 {
     return UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad;
 }
 
 /// 是否是iTV
-BOOL isiTV(void)
+BOOL OKIsiTV(void)
 {
     return UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomTV;
 }
 
 /// 判断是否为iPod
-BOOL isiPod(void)
+BOOL OKIsiPod(void)
 {
     return [[[UIDevice currentDevice] model] isEqualToString:@"iPod touch"];
 }
 
 /// 判断是否 Retina屏
-BOOL isRetina(void)
+BOOL OKIsRetina(void)
 {
     return [[UIScreen mainScreen] respondsToSelector:@selector(displayLinkWithTarget:selector:)]
     && ([UIScreen mainScreen].scale == 2.0f);

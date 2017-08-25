@@ -66,8 +66,6 @@ NSDictionary *OKJSONSerialization(NSString *json)
     return result;
 }
 
-#pragma mark - NSDictionary OKSafeAccess
-
 - (BOOL)ok_hasKey:(NSString *)key { return [self objectForKey:key] != nil; }
 
 - (NSString *)ok_stringForKey:(id)key {
@@ -307,7 +305,7 @@ NSDictionary *OKJSONSerialization(NSString *json)
 
 @end
 
-#pragma mark - NSMutableDictionary OKSafeAccess
+#pragma mark - NSMutableDictionary OKUtils_Category
 
 @implementation NSMutableDictionary (OKUtils_Category)
 

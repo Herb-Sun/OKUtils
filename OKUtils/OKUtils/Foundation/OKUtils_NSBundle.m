@@ -56,6 +56,13 @@ NSString *OKCachesPath(void)
     return [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject];
 }
 
+/// references 目录包含应用程序的偏好设置文件
+NSString *OKLibraryOreferencePath(void)
+{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
+    return paths.count > 0 ? [[paths firstObject] stringByAppendingFormat:@"/Preferences"] : @"undefined";
+}
+
 /// 获取Tmp目录
 NSString *OKTmpPath(void)
 {

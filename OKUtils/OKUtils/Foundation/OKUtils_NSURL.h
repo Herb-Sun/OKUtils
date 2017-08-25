@@ -8,12 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-
 /// 编码url string
 FOUNDATION_EXTERN NSString *OKURLEncode(NSString *URLString);
 /// 解码url string
 FOUNDATION_EXTERN NSString *OKURLDecode(NSString *URLString);
 /// 解析url参数
 FOUNDATION_EXTERN NSDictionary *OKURLQuery(NSString *URLString);
-/// 将dict转成url
+/// 将dict转成url string
 FOUNDATION_EXTERN NSString *OKURLAntiQuery(NSDictionary *dict);

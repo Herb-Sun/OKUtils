@@ -23,3 +23,53 @@ NSString *OKStringValid(NSString *string, NSString *placeholder)
     return string ?: (placeholder ?: @"");
 }
 
+
+@implementation NSString (OKUtils_Category)
+
+
+- (CGFloat)ok_widthWithFont:(UIFont *)font containerHeight:(CGFloat)containerHeight {
+    return [self ok_sizeWithFont:font containerSize:CGSizeMake(containerHeight, CGFLOAT_MAX)].width;
+}
+
+- (CGFloat)ok_heightWithFont:(UIFont *)font containerWidth:(CGFloat)containerWidth {
+    return [self ok_sizeWithFont:font containerSize:CGSizeMake(containerWidth, CGFLOAT_MAX)].height;
+}
+
+- (CGSize)ok_sizeWithFont:(UIFont *)font containerSize:(CGSize)containerSize {
+    
+    UIFont *textFont = font ? : [UIFont systemFontOfSize:[UIFont systemFontSize]];
+    
+    CGSize textSize = CGSizeZero;
+    
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < 70000
+    if ([self respondsToSelector:@selector(boundingRectWithSize:options:attributes:context:)]) {
+        NSMutableParagraphStyle *paragraph = [[NSMutableParagraphStyle alloc] init];
+        paragraph.lineBreakMode = NSLineBreakByWordWrapping;
+        NSDictionary *attributes = @{NSFontAttributeName: textFont,
+                                     NSParagraphStyleAttributeName: paragraph};
+        textSize = [self boundingRectWithSize:containerSize
+                                      options:(NSStringDrawingUsesLineFragmentOrigin |
+                                               NSStringDrawingUsesFontLeading |
+                                               NSStringDrawingTruncatesLastVisibleLine)
+                                   attributes:attributes
+                                      context:nil].size;
+    } else {
+        textSize = [self sizeWithFont:textFont
+                    constrainedToSize:containerSize
+                        lineBreakMode:NSLineBreakByWordWrapping];
+    }
+#else
+    NSDictionary *attributes = @{NSFontAttributeName: textFont,
+                                 NSParagraphStyleAttributeName: [NSParagraphStyle defaultParagraphStyle]};
+    
+    textSize = [self boundingRectWithSize:containerSize
+                                  options:(NSStringDrawingUsesLineFragmentOrigin |
+                                           NSStringDrawingUsesFontLeading |
+                                           NSStringDrawingTruncatesLastVisibleLine)
+                               attributes:attributes
+                                  context:nil].size;
+#endif
+    return CGSizeMake(ceil(textSize.width), ceil(textSize.height));
+}
+
+@end

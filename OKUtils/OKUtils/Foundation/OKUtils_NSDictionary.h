@@ -34,8 +34,6 @@ FOUNDATION_EXTERN NSDictionary *OKJSONSerialization(NSString *json);
 - (NSDictionary *)ok_dictionaryByAddingEntriesFromDictionary:(NSDictionary *)dictionary;
 - (NSDictionary *)ok_dictionaryByRemovingEntriesWithKeys:(NSSet *)keys;
 
-#pragma mark - NSDictionary OKSafeAccess
-
 - (BOOL)ok_hasKey:(NSString *)key;
 - (nullable NSString *)ok_stringForKey:(id)key;
 - (nullable NSNumber *)ok_numberForKey:(id)key;
