@@ -9,7 +9,10 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 
-@interface UITextField (OKUtils_Extension)
+@interface UITextField (OKUtils_Category)
+
+/// 是否禁用menuBar
+@property (nonatomic, assign, getter = isMenuItemDisabled) BOOL menuItemDisabled;
 
 /// 设置placeholder 颜色
 - (void)setPlaceholderColor:(UIColor *)color;

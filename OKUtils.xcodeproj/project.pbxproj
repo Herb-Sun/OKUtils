@@ -83,6 +83,8 @@
 		04F010DF1F4EBF4F003DF5AA /* UIWebView+OKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F010A61F4EBF4E003DF5AA /* UIWebView+OKCategory.m */; };
 		04F010E01F4EBF4F003DF5AA /* UIWebView+OKJavaScript.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F010A81F4EBF4E003DF5AA /* UIWebView+OKJavaScript.m */; };
 		04F010E31F4EC0D0003DF5AA /* OKUtils_UIButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F010E21F4EC0D0003DF5AA /* OKUtils_UIButton.m */; };
+		04F010E61F4FE5ED003DF5AA /* OKUtils_UINavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F010E51F4FE5ED003DF5AA /* OKUtils_UINavigationController.m */; };
+		04F010E91F4FEAB8003DF5AA /* OKUtils_UIWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F010E81F4FEAB8003DF5AA /* OKUtils_UIWebView.m */; };
 		1B8FFCCADE6E054137FDEDA5 /* libPods-OKUtilsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A8804FED252BE6893E859E3B /* libPods-OKUtilsTests.a */; };
 		B372248063E10830BDE7C118 /* libPods-OKUtils.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 77FAE9506336C3176D69E94A /* libPods-OKUtils.a */; };
 /* End PBXBuildFile section */
@@ -252,6 +254,10 @@
 		04F010A81F4EBF4E003DF5AA /* UIWebView+OKJavaScript.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+OKJavaScript.m"; sourceTree = "<group>"; };
 		04F010E11F4EC0D0003DF5AA /* OKUtils_UIButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OKUtils_UIButton.h; sourceTree = "<group>"; };
 		04F010E21F4EC0D0003DF5AA /* OKUtils_UIButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OKUtils_UIButton.m; sourceTree = "<group>"; };
+		04F010E41F4FE5ED003DF5AA /* OKUtils_UINavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OKUtils_UINavigationController.h; sourceTree = "<group>"; };
+		04F010E51F4FE5ED003DF5AA /* OKUtils_UINavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OKUtils_UINavigationController.m; sourceTree = "<group>"; };
+		04F010E71F4FEAB8003DF5AA /* OKUtils_UIWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OKUtils_UIWebView.h; sourceTree = "<group>"; };
+		04F010E81F4FEAB8003DF5AA /* OKUtils_UIWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OKUtils_UIWebView.m; sourceTree = "<group>"; };
 		0F2FBF7563D1DF70F6A32511 /* Pods-OKUtils.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OKUtils.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OKUtils/Pods-OKUtils.debug.xcconfig"; sourceTree = "<group>"; };
 		77FAE9506336C3176D69E94A /* libPods-OKUtils.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OKUtils.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A73E067D2598173A1F79CC7 /* Pods-OKUtils.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OKUtils.release.xcconfig"; path = "Pods/Target Support Files/Pods-OKUtils/Pods-OKUtils.release.xcconfig"; sourceTree = "<group>"; };
@@ -383,6 +389,10 @@
 				04F010041F4D5FF4003DF5AA /* OKUtils_UITextField.m */,
 				04F010E11F4EC0D0003DF5AA /* OKUtils_UIButton.h */,
 				04F010E21F4EC0D0003DF5AA /* OKUtils_UIButton.m */,
+				04F010E41F4FE5ED003DF5AA /* OKUtils_UINavigationController.h */,
+				04F010E51F4FE5ED003DF5AA /* OKUtils_UINavigationController.m */,
+				04F010E71F4FEAB8003DF5AA /* OKUtils_UIWebView.h */,
+				04F010E81F4FEAB8003DF5AA /* OKUtils_UIWebView.m */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -1089,6 +1099,7 @@
 				04F010C71F4EBF4F003DF5AA /* UIButton+OKCategory.m in Sources */,
 				04F00FFF1F4D5FB4003DF5AA /* OKUtils_UIView.m in Sources */,
 				04F010DA1F4EBF4F003DF5AA /* UIView+OKCorner.m in Sources */,
+				04F010E61F4FE5ED003DF5AA /* OKUtils_UINavigationController.m in Sources */,
 				04F010B01F4EBF4F003DF5AA /* NSFileManager+OKCategory.m in Sources */,
 				04F00FF51F4D5EC2003DF5AA /* OKUtils_Regex.m in Sources */,
 				04F010BA1F4EBF4F003DF5AA /* NSString+OKChinese.m in Sources */,
@@ -1099,6 +1110,7 @@
 				04F010DC1F4EBF4F003DF5AA /* UIView+OKShake.m in Sources */,
 				04F010D11F4EBF4F003DF5AA /* UIScreen+OKCategory.m in Sources */,
 				04F010BE1F4EBF4F003DF5AA /* NSTimer+OKCategory.m in Sources */,
+				04F010E91F4FEAB8003DF5AA /* OKUtils_UIWebView.m in Sources */,
 				04F010C01F4EBF4F003DF5AA /* NSUserDefaults+OKCategory.m in Sources */,
 				04F010B71F4EBF4F003DF5AA /* NSObject+OKCategory.m in Sources */,
 				04F010D71F4EBF4F003DF5AA /* UIView+OKBorder.m in Sources */,
