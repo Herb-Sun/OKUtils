@@ -26,7 +26,7 @@ NSDictionary *OKJSONSerialization(NSString *json)
     return info;
 }
 
-- (NSString *)ok_XMLString {
+- (NSString *)XMLString {
     
     NSString *xmlStr = @"<xml>";
     for (NSString *key in self.allKeys) {
@@ -38,7 +38,7 @@ NSDictionary *OKJSONSerialization(NSString *json)
     return xmlStr;
 }
 
-- (NSString *)ok_JSONString {
+- (NSString *)JSONString {
     
     NSError *error;
     NSData  *jsonData = [NSJSONSerialization dataWithJSONObject:self
@@ -54,21 +54,21 @@ NSDictionary *OKJSONSerialization(NSString *json)
     return jsonString;
 }
 
-- (NSDictionary *)ok_dictionaryByAddingEntriesFromDictionary:(NSDictionary *)dictionary {
+- (NSDictionary *)dictionaryByAddingEntriesFromDictionary:(NSDictionary *)dictionary {
     NSMutableDictionary *result = [self mutableCopy];
     [result addEntriesFromDictionary:dictionary];
     return result;
 }
 
-- (NSDictionary *)ok_dictionaryByRemovingEntriesWithKeys:(NSSet *)keys {
+- (NSDictionary *)dictionaryByRemovingEntriesWithKeys:(NSSet *)keys {
     NSMutableDictionary *result = [self mutableCopy];
     [result removeObjectsForKeys:keys.allObjects];
     return result;
 }
 
-- (BOOL)ok_hasKey:(NSString *)key { return [self objectForKey:key] != nil; }
+- (BOOL)hasKey:(NSString *)key { return [self objectForKey:key] != nil; }
 
-- (NSString *)ok_stringForKey:(id)key {
+- (NSString *)stringForKey:(id)key {
     
     id value = [self objectForKey:key];
     if (value == nil || value == [NSNull null]) {
@@ -83,7 +83,7 @@ NSDictionary *OKJSONSerialization(NSString *json)
     return nil;
 }
 
-- (NSNumber *)ok_numberForKey:(id)key {
+- (NSNumber *)numberForKey:(id)key {
     id value = [self objectForKey:key];
     if ([value isKindOfClass:[NSNumber class]]) {
         return (NSNumber *)value;
@@ -96,7 +96,7 @@ NSDictionary *OKJSONSerialization(NSString *json)
     return nil;
 }
 
-- (NSDecimalNumber *)ok_decimalNumberForKey:(id)key {
+- (NSDecimalNumber *)decimalNumberForKey:(id)key {
     id value = [self objectForKey:key];
     
     if ([value isKindOfClass:[NSDecimalNumber class]]) {
@@ -111,7 +111,7 @@ NSDictionary *OKJSONSerialization(NSString *json)
     return nil;
 }
 
-- (NSArray *)ok_arrayForKey:(id)key {
+- (NSArray *)arrayForKey:(id)key {
     id value = [self objectForKey:key];
     if (value == nil || value == [NSNull null]) {
         return nil;
@@ -122,7 +122,7 @@ NSDictionary *OKJSONSerialization(NSString *json)
     return nil;
 }
 
-- (NSDictionary *)ok_dictionaryForKey:(id)key {
+- (NSDictionary *)dictionaryForKey:(id)key {
     id value = [self objectForKey:key];
     if (value == nil || value == [NSNull null]) {
         return nil;
@@ -133,7 +133,7 @@ NSDictionary *OKJSONSerialization(NSString *json)
     return nil;
 }
 
-- (NSInteger)ok_integerForKey:(id)key {
+- (NSInteger)integerForKey:(id)key {
     id value = [self objectForKey:key];
     if (value == nil || value == [NSNull null]) {
         return 0;
@@ -144,7 +144,7 @@ NSDictionary *OKJSONSerialization(NSString *json)
     return 0;
 }
 
-- (NSUInteger)ok_unsignedIntegerForKey:(id)key {
+- (NSUInteger)unsignedIntegerForKey:(id)key {
     id value = [self objectForKey:key];
     if (value == nil || value == [NSNull null]) {
         return 0;
@@ -155,7 +155,7 @@ NSDictionary *OKJSONSerialization(NSString *json)
     return 0;
 }
 
-- (BOOL)ok_boolForKey:(id)key {
+- (BOOL)boolForKey:(id)key {
     id value = [self objectForKey:key];
     
     if (value == nil || value == [NSNull null]) {
@@ -170,7 +170,7 @@ NSDictionary *OKJSONSerialization(NSString *json)
     return NO;
 }
 
-- (int16_t)ok_int16ForKey:(id)key {
+- (int16_t)int16ForKey:(id)key {
     id value = [self objectForKey:key];
     
     if (value == nil || value == [NSNull null]) {
@@ -185,7 +185,7 @@ NSDictionary *OKJSONSerialization(NSString *json)
     return 0;
 }
 
-- (int32_t)ok_int32ForKey:(id)key {
+- (int32_t)int32ForKey:(id)key {
     id value = [self objectForKey:key];
     
     if (value == nil || value == [NSNull null]) {
@@ -197,7 +197,7 @@ NSDictionary *OKJSONSerialization(NSString *json)
     return 0;
 }
 
-- (int64_t)ok_int64ForKey:(id)key {
+- (int64_t)int64ForKey:(id)key {
     id value = [self objectForKey:key];
     
     if (value == nil || value == [NSNull null]) {
@@ -209,7 +209,7 @@ NSDictionary *OKJSONSerialization(NSString *json)
     return 0;
 }
 
-- (char)ok_charForKey:(id)key {
+- (char)charForKey:(id)key {
     id value = [self objectForKey:key];
     
     if (value == nil || value == [NSNull null]) {
@@ -221,7 +221,7 @@ NSDictionary *OKJSONSerialization(NSString *json)
     return 0;
 }
 
-- (short)ok_shortForKey:(id)key {
+- (short)shortForKey:(id)key {
     id value = [self objectForKey:key];
     
     if (value == nil || value == [NSNull null]) {
@@ -236,7 +236,7 @@ NSDictionary *OKJSONSerialization(NSString *json)
     return 0;
 }
 
-- (float)ok_floatForKey:(id)key {
+- (float)floatForKey:(id)key {
     id value = [self objectForKey:key];
     
     if (value == nil || value == [NSNull null]) {
@@ -248,7 +248,7 @@ NSDictionary *OKJSONSerialization(NSString *json)
     return 0;
 }
 
-- (double)ok_doubleForKey:(id)key {
+- (double)doubleForKey:(id)key {
     id value = [self objectForKey:key];
     
     if (value == nil || value == [NSNull null]) {
@@ -260,7 +260,7 @@ NSDictionary *OKJSONSerialization(NSString *json)
     return 0;
 }
 
-- (long long)ok_longLongForKey:(id)key {
+- (long long)longLongForKey:(id)key {
     id value = [self objectForKey:key];
     if ([value isKindOfClass:[NSString class]] || [value isKindOfClass:[NSNumber class]]) {
         return [value longLongValue];
@@ -268,7 +268,7 @@ NSDictionary *OKJSONSerialization(NSString *json)
     return 0;
 }
 
-- (unsigned long long)ok_unsignedLongLongForKey:(id)key {
+- (unsigned long long)unsignedLongLongForKey:(id)key {
     id value = [self objectForKey:key];
     if ([value isKindOfClass:[NSString class]]) {
         NSNumberFormatter *nf = [[NSNumberFormatter alloc] init];
@@ -280,7 +280,7 @@ NSDictionary *OKJSONSerialization(NSString *json)
     return 0;
 }
 
-- (NSDate *)ok_dateForKey:(id)key dateFormat:(NSString *)dateFormat {
+- (NSDate *)dateForKey:(id)key dateFormat:(NSString *)dateFormat {
     NSDateFormatter *formater = [[NSDateFormatter alloc]init];
     formater.dateFormat = dateFormat;
     id value = [self objectForKey:key];
@@ -295,13 +295,13 @@ NSDictionary *OKJSONSerialization(NSString *json)
     return nil;
 }
 
-- (CGFloat)ok_CGFloatForKey:(id)key { return [self[key] doubleValue]; }
+- (CGFloat)CGFloatForKey:(id)key { return [self[key] doubleValue]; }
 
-- (CGPoint)ok_pointForKey:(id)key { return CGPointFromString(self[key]); }
+- (CGPoint)pointForKey:(id)key { return CGPointFromString(self[key]); }
 
-- (CGSize)ok_sizeForKey:(id)key { return CGSizeFromString(self[key]); }
+- (CGSize)sizeForKey:(id)key { return CGSizeFromString(self[key]); }
 
-- (CGRect)ok_rectForKey:(id)key { return CGRectFromString(self[key]); }
+- (CGRect)rectForKey:(id)key { return CGRectFromString(self[key]); }
 
 @end
 
@@ -309,15 +309,15 @@ NSDictionary *OKJSONSerialization(NSString *json)
 
 @implementation NSMutableDictionary (OKUtils_Category)
 
-- (void)ok_setPoint:(CGPoint)point forKey:(NSString *)key {
+- (void)setPoint:(CGPoint)point forKey:(NSString *)key {
     self[key] = NSStringFromCGPoint(point);
 }
 
-- (void)ok_setSize:(CGSize)size forKey:(NSString *)key {
+- (void)setSize:(CGSize)size forKey:(NSString *)key {
     self[key] = NSStringFromCGSize(size);
 }
 
-- (void)ok_setRect:(CGRect)rect forKey:(NSString *)key {
+- (void)setRect:(CGRect)rect forKey:(NSString *)key {
     self[key] = NSStringFromCGRect(rect);
 }
 

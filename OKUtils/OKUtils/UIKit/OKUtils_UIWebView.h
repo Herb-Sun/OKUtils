@@ -11,21 +11,21 @@
 @interface UIWebView (OKUtils_Category)
 
 /// 获取某个标签的结点个数
-- (NSUInteger)ok_nodeCountOfTag:(NSString *)tag;
+- (NSUInteger)nodeCountOfTag:(NSString *)tag;
 
 /// 获取当前页面URL
-- (NSString *)ok_fetchCurrentURL;
+- (NSString *)fetchCurrentURL;
 
 /// 获取标题
-- (NSString *)ok_fetchTitle;
+- (NSString *)fetchTitle;
 
 /// 获取图片
-- (NSArray *)ok_fetchImages;
+- (NSArray *)fetchImages;
 
 /// 获取当前页面所有链接
-- (NSArray *)ok_fetchAllURL;
+- (NSArray *)fetchAllURL;
 
 /// 改变指定标签的字体大小
-- (void)ok_setFontSize:(CGFloat)fontSize withTag:(NSString *)tagName;
+- (void)setFontSize:(CGFloat)fontSize withTag:(NSString *)tagName;
 
 @end

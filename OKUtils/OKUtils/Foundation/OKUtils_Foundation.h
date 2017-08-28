@@ -11,6 +11,12 @@
 
 #import "OKUtils_Runtime.h"
 #import "OKUtils_NSString.h"
+#import "OKUtils_NSUserDefaults.h"
 #import "OKUtils_Regex.h"
+#import "OKUtils_NSBundle.h"
+#import "OKUtils_NSDictionary.h"
+#import "OKUtils_NSURL.h"
+#import "OKUtils_NSFileManager.h"
+#import "OKUtils_NSData.h"
 
 #endif /* OKUtils_Foundation_h */

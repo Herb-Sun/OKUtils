@@ -32,9 +32,9 @@ typedef NS_ENUM(NSInteger, OKValidType) {
  @param type 验证类型
  @return 验证结果
  */
-FOUNDATION_EXTERN BOOL OKValidation(NSString *str, OKValidType type);
-FOUNDATION_EXTERN BOOL OKValidationBetterMin(NSString *str, OKValidType type, NSUInteger min);
-FOUNDATION_EXTERN BOOL OKValidationBetterMax(NSString *str, OKValidType type, NSUInteger max);
+FOUNDATION_EXPORT BOOL OKValidation(NSString *str, OKValidType type);
+FOUNDATION_EXPORT BOOL OKValidationBetterMin(NSString *str, OKValidType type, NSUInteger min);
+FOUNDATION_EXPORT BOOL OKValidationBetterMax(NSString *str, OKValidType type, NSUInteger max);
 
 /**
  更好的正则验证 含判空处理
@@ -45,6 +45,6 @@ FOUNDATION_EXTERN BOOL OKValidationBetterMax(NSString *str, OKValidType type, NS
  @param max 限制字符串最大字符数 右开区间
  @return 验证结果
  */
-FOUNDATION_EXTERN BOOL OKValidationBetter(NSString *str, OKValidType type, NSUInteger min, NSUInteger max);
+FOUNDATION_EXPORT BOOL OKValidationBetter(NSString *str, OKValidType type, NSUInteger min, NSUInteger max);
 
 

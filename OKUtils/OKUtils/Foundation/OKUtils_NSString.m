@@ -27,15 +27,15 @@ NSString *OKStringValid(NSString *string, NSString *placeholder)
 @implementation NSString (OKUtils_Category)
 
 
-- (CGFloat)ok_widthWithFont:(UIFont *)font containerHeight:(CGFloat)containerHeight {
-    return [self ok_sizeWithFont:font containerSize:CGSizeMake(containerHeight, CGFLOAT_MAX)].width;
+- (CGFloat)widthWithFont:(UIFont *)font containerHeight:(CGFloat)containerHeight {
+    return [self sizeWithFont:font containerSize:CGSizeMake(containerHeight, CGFLOAT_MAX)].width;
 }
 
-- (CGFloat)ok_heightWithFont:(UIFont *)font containerWidth:(CGFloat)containerWidth {
-    return [self ok_sizeWithFont:font containerSize:CGSizeMake(containerWidth, CGFLOAT_MAX)].height;
+- (CGFloat)heightWithFont:(UIFont *)font containerWidth:(CGFloat)containerWidth {
+    return [self sizeWithFont:font containerSize:CGSizeMake(containerWidth, CGFLOAT_MAX)].height;
 }
 
-- (CGSize)ok_sizeWithFont:(UIFont *)font containerSize:(CGSize)containerSize {
+- (CGSize)sizeWithFont:(UIFont *)font containerSize:(CGSize)containerSize {
     
     UIFont *textFont = font ? : [UIFont systemFontOfSize:[UIFont systemFontSize]];
     

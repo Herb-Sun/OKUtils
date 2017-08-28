@@ -10,25 +10,25 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NSUserDefaults (OKCategory)
+@interface NSUserDefaults (OKUtils_Category)
 
 /**
- *  @brief 读取信息
+ *  读取信息
  */
 + (nullable id)objectForKey:(NSString *)defaultName;
 
 /**
- *  @brief 存储信息
+ *  存储信息
  */
 + (void)saveObject:(nullable id)value forKey:(NSString *)defaultName;
 
 /**
- *  @brief 保存model
+ *  保存model
  */
 + (nullable id<NSCoding>)modelForKey:(NSString *)defaultName;
 
 /**
- *  @brief 存储model
+ *  存储model
  */
 + (void)saveModel:(id<NSCoding>)value forKey:(NSString *)defaultName;
 

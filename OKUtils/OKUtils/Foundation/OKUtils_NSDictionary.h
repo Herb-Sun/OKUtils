@@ -15,48 +15,48 @@ NS_ASSUME_NONNULL_BEGIN
 @interface NSDictionary (OKUtils_Category)
 
 /// 将JSON字符串转换成NSDictionary
-FOUNDATION_EXTERN NSDictionary *OKJSONSerialization(NSString *json);
+FOUNDATION_EXPORT NSDictionary *OKJSONSerialization(NSString *json);
 
 /**
  *  将NSDictionary转换成XML字符串
  *
  *  @return XML 字符串
  */
-- (NSString *)ok_XMLString;
+- (NSString *)XMLString;
 
 /**
  *  将NSDictionary转换成JSON字符串
  *
  *  @return JSON字符串
  */
-- (nullable NSString *)ok_JSONString;
+- (nullable NSString *)JSONString;
 
-- (NSDictionary *)ok_dictionaryByAddingEntriesFromDictionary:(NSDictionary *)dictionary;
-- (NSDictionary *)ok_dictionaryByRemovingEntriesWithKeys:(NSSet *)keys;
+- (NSDictionary *)dictionaryByAddingEntriesFromDictionary:(NSDictionary *)dictionary;
+- (NSDictionary *)dictionaryByRemovingEntriesWithKeys:(NSSet *)keys;
 
-- (BOOL)ok_hasKey:(NSString *)key;
-- (nullable NSString *)ok_stringForKey:(id)key;
-- (nullable NSNumber *)ok_numberForKey:(id)key;
-- (nullable NSDecimalNumber *)ok_decimalNumberForKey:(id)key;
-- (nullable NSArray *)ok_arrayForKey:(id)key;
-- (nullable NSDictionary *)ok_dictionaryForKey:(id)key;
-- (NSInteger)ok_integerForKey:(id)key;
-- (NSUInteger)ok_unsignedIntegerForKey:(id)key;
-- (BOOL)ok_boolForKey:(id)key;
-- (int16_t)ok_int16ForKey:(id)key;
-- (int32_t)ok_int32ForKey:(id)key;
-- (int64_t)ok_int64ForKey:(id)key;
-- (char)ok_charForKey:(id)key;
-- (short)ok_shortForKey:(id)key;
-- (float)ok_floatForKey:(id)key;
-- (double)ok_doubleForKey:(id)key;
-- (long long)ok_longLongForKey:(id)key;
-- (unsigned long long)ok_unsignedLongLongForKey:(id)key;
-- (nullable NSDate *)ok_dateForKey:(id)key dateFormat:(NSString *)dateFormat;
-- (CGFloat)ok_CGFloatForKey:(id)key;
-- (CGPoint)ok_pointForKey:(id)key;
-- (CGSize)ok_sizeForKey:(id)key;
-- (CGRect)ok_rectForKey:(id)key;
+- (BOOL)hasKey:(NSString *)key;
+- (nullable NSString *)stringForKey:(id)key;
+- (nullable NSNumber *)numberForKey:(id)key;
+- (nullable NSDecimalNumber *)decimalNumberForKey:(id)key;
+- (nullable NSArray *)arrayForKey:(id)key;
+- (nullable NSDictionary *)dictionaryForKey:(id)key;
+- (NSInteger)integerForKey:(id)key;
+- (NSUInteger)unsignedIntegerForKey:(id)key;
+- (BOOL)boolForKey:(id)key;
+- (int16_t)int16ForKey:(id)key;
+- (int32_t)int32ForKey:(id)key;
+- (int64_t)int64ForKey:(id)key;
+- (char)charForKey:(id)key;
+- (short)shortForKey:(id)key;
+- (float)floatForKey:(id)key;
+- (double)doubleForKey:(id)key;
+- (long long)longLongForKey:(id)key;
+- (unsigned long long)unsignedLongLongForKey:(id)key;
+- (nullable NSDate *)dateForKey:(id)key dateFormat:(NSString *)dateFormat;
+- (CGFloat)CGFloatForKey:(id)key;
+- (CGPoint)pointForKey:(id)key;
+- (CGSize)sizeForKey:(id)key;
+- (CGRect)rectForKey:(id)key;
 
 @end
 
@@ -64,9 +64,9 @@ FOUNDATION_EXTERN NSDictionary *OKJSONSerialization(NSString *json);
 
 @interface NSMutableDictionary (OKUtils_Category)
 
-- (void)ok_setPoint:(CGPoint)point forKey:(NSString *)key;
-- (void)ok_setSize:(CGSize)size forKey:(NSString *)key;
-- (void)ok_setRect:(CGRect)rect forKey:(NSString *)key;
+- (void)setPoint:(CGPoint)point forKey:(NSString *)key;
+- (void)setSize:(CGSize)size forKey:(NSString *)key;
+- (void)setRect:(CGRect)rect forKey:(NSString *)key;
 
 @end
 

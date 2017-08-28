@@ -10,8 +10,8 @@
 #import <Accelerate/Accelerate.h>
 #import <QuartzCore/QuartzCore.h>
 
-static inline CGFloat __OKDegreesToRadians(CGFloat degrees) { return degrees * M_PI / 180; }
-static inline CGFloat __OKRadiansToDegrees(CGFloat radians) { return radians * 180/M_PI; }
+NS_INLINE CGFloat __OKDegreesToRadians(CGFloat degrees) { return degrees * M_PI / 180; }
+NS_INLINE CGFloat __OKRadiansToDegrees(CGFloat radians) { return radians * 180/M_PI; }
 
 UIImage *OKImageByColor(UIColor *color)
 {

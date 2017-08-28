@@ -14,7 +14,7 @@
 
 #pragma mark - MD2 MD4 MD5加密
 
-- (NSString *)ok_MD2Encryption {
+- (NSString *)MD2Encryption {
     
     unsigned char digest[CC_MD2_DIGEST_LENGTH];
     CC_MD2(self.bytes, (CC_LONG)self.length, digest);
@@ -26,7 +26,7 @@
     return strBuffer;
 }
 
-- (NSString *)ok_MD4Encryption {
+- (NSString *)MD4Encryption {
     
     unsigned char digest[CC_MD4_DIGEST_LENGTH];
     CC_MD4(self.bytes, (CC_LONG)self.length, digest);
@@ -38,7 +38,7 @@
     return strBuffer;
 }
 
-- (NSString *)ok_MD5Encryption {
+- (NSString *)MD5Encryption {
     
     unsigned char digest[CC_MD5_DIGEST_LENGTH];
     CC_MD5(self.bytes, (CC_LONG)self.length, digest);
@@ -51,7 +51,7 @@
 }
 
 
-- (NSData *)ok_MD2DataEncryption {
+- (NSData *)MD2DataEncryption {
     
     unsigned char digest[CC_MD2_DIGEST_LENGTH];
     CC_MD2(self.bytes, (CC_LONG)self.length, digest);
@@ -59,7 +59,7 @@
     return [NSData dataWithBytes:digest length:CC_MD2_DIGEST_LENGTH];
 }
 
-- (NSData *)ok_MD4DataEncryption {
+- (NSData *)MD4DataEncryption {
     
     unsigned char digest[CC_MD4_DIGEST_LENGTH];
     CC_MD4(self.bytes, (CC_LONG)self.length, digest);
@@ -67,7 +67,7 @@
     return [NSData dataWithBytes:digest length:CC_MD4_DIGEST_LENGTH];
 }
 
-- (NSData *)ok_MD5DataEncryption {
+- (NSData *)MD5DataEncryption {
     
     unsigned char digest[CC_MD5_DIGEST_LENGTH];
     CC_MD5(self.bytes, (CC_LONG)self.length, digest);
@@ -77,7 +77,7 @@
 
 #pragma mark - SHA1 SHA224 SHA256 SHA384 SHA512加密
 
-- (NSString *)ok_SHA1Encryption {
+- (NSString *)SHA1Encryption {
     
     uint8_t digest[CC_SHA1_DIGEST_LENGTH];
     CC_SHA1(self.bytes, (CC_LONG)self.length, digest);
@@ -89,7 +89,7 @@
     return strBuffer;
 }
 
-- (NSString *)ok_SHA224Encryption {
+- (NSString *)SHA224Encryption {
     
     uint8_t digest[CC_SHA224_DIGEST_LENGTH];
     CC_SHA224(self.bytes, (CC_LONG)self.length, digest);
@@ -101,7 +101,7 @@
     return strBuffer;
 }
 
-- (NSString *)ok_SHA256Encryption {
+- (NSString *)SHA256Encryption {
     
     uint8_t digest[CC_SHA256_DIGEST_LENGTH];
     CC_SHA256([self bytes], (CC_LONG)[self length], digest);
@@ -113,7 +113,7 @@
     return strBuffer;
 }
 
-- (NSString *)ok_SHA384Encryption {
+- (NSString *)SHA384Encryption {
     
     uint8_t digest[CC_SHA384_DIGEST_LENGTH];
     CC_SHA384(self.bytes, (CC_LONG)self.length, digest);
@@ -125,7 +125,7 @@
     return strBuffer;
 }
 
-- (NSString *)ok_SHA512Encryption {
+- (NSString *)SHA512Encryption {
     
     uint8_t digest[CC_SHA512_DIGEST_LENGTH];
     CC_SHA512([self bytes], (CC_LONG)[self length], digest);
@@ -137,7 +137,7 @@
     return strBuffer;
 }
 
-- (NSData *)ok_SHA1DataEncryption {
+- (NSData *)SHA1DataEncryption {
     
     uint8_t digest[CC_SHA1_DIGEST_LENGTH];
     CC_SHA1(self.bytes, (CC_LONG)self.length, digest);
@@ -145,7 +145,7 @@
     return [NSData dataWithBytes:digest length:CC_SHA1_DIGEST_LENGTH];
 }
 
-- (NSData *)ok_SHA224DataEncryption {
+- (NSData *)SHA224DataEncryption {
     
     uint8_t digest[CC_SHA224_DIGEST_LENGTH];
     CC_SHA224(self.bytes, (CC_LONG)self.length, digest);
@@ -153,7 +153,7 @@
     return [NSData dataWithBytes:digest length:CC_SHA224_DIGEST_LENGTH];
 }
 
-- (NSData *)ok_SHA256DataEncryption {
+- (NSData *)SHA256DataEncryption {
     
     uint8_t digest[CC_SHA256_DIGEST_LENGTH];
     CC_SHA256([self bytes], (CC_LONG)[self length], digest);
@@ -161,7 +161,7 @@
     return [NSData dataWithBytes:digest length:CC_SHA256_DIGEST_LENGTH];
 }
 
-- (NSData *)ok_SHA384DataEncryption {
+- (NSData *)SHA384DataEncryption {
     
     uint8_t digest[CC_SHA384_DIGEST_LENGTH];
     CC_SHA384(self.bytes, (CC_LONG)self.length, digest);
@@ -169,7 +169,7 @@
     return [NSData dataWithBytes:digest length:CC_SHA384_DIGEST_LENGTH];
 }
 
-- (NSData *)ok_SHA512DataEncryption {
+- (NSData *)SHA512DataEncryption {
     
     uint8_t digest[CC_SHA512_DIGEST_LENGTH];
     CC_SHA512([self bytes], (CC_LONG)[self length], digest);
@@ -178,7 +178,7 @@
 }
 
 
-- (NSData *)ok_encryptedWithAESUsingKey:(NSString *)key {
+- (NSData *)encryptedWithAESUsingKey:(NSString *)key {
     
     NSData *keyData = [key dataUsingEncoding:NSUTF8StringEncoding];
     size_t dataOutMoved = 0;
@@ -205,7 +205,7 @@
 }
 
 
-- (NSData *)ok_decryptedWithAESUsingKey:(NSString *)key {
+- (NSData *)decryptedWithAESUsingKey:(NSString *)key {
     
     NSData *keyData = [key dataUsingEncoding:NSUTF8StringEncoding];
     size_t dataOutMoved = 0;
@@ -231,7 +231,7 @@
     return nil;
 }
 
-- (NSData *)ok_encryptedWith3DESUsingKey:(NSString *)key {
+- (NSData *)encryptedWith3DESUsingKey:(NSString *)key {
     
     NSData *keyData = [key dataUsingEncoding:NSUTF8StringEncoding];
     size_t dataOutMoved = 0;
@@ -257,7 +257,7 @@
     return nil;
 }
 
-- (NSData *)ok_decryptedWith3DESUsingKey:(NSString *)key {
+- (NSData *)decryptedWith3DESUsingKey:(NSString *)key {
     
     NSData *keyData = [key dataUsingEncoding:NSUTF8StringEncoding];
     size_t dataOutMoved = 0;

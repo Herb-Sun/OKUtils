@@ -13,7 +13,7 @@
 @implementation UIButton (OKUtils_Category)
 
 - (void)setBackgroundColor:(UIColor *)color forState:(UIControlState)state {
-    [self setBackgroundImage:OKImageFromColor(color) forState:state];
+    [self setBackgroundImage:OKImageByColor(color) forState:state];
 }
 
 - (UIEdgeInsets)touchAreaInsets {

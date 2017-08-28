@@ -9,9 +9,9 @@
 #import "OKUtils_Regex.h"
 
 /// 严格验证身份证
-static inline BOOL __OKValidIDCard(NSString *num);
+NS_INLINE BOOL __OKValidIDCard(NSString *num);
 /// 严格验证中国银行卡号
-static inline BOOL __OKValidChinaBankCard(NSString *number);
+NS_INLINE BOOL __OKValidChinaBankCard(NSString *number);
 
 #pragma mark - Public
 
@@ -94,7 +94,7 @@ BOOL OKValidationBetter(NSString *str, OKValidType type, NSUInteger min, NSUInte
 
 #pragma mark - Private
 
-static inline BOOL __OKValidIDCard(NSString *num)
+NS_INLINE BOOL __OKValidIDCard(NSString *num)
 {
     if (num.length != 18) return NO;
     
@@ -115,7 +115,7 @@ static inline BOOL __OKValidIDCard(NSString *num)
 }
 
 /// 严格验证中国银行卡号
-static inline BOOL __OKValidChinaBankCard(NSString *number)
+NS_INLINE BOOL __OKValidChinaBankCard(NSString *number)
 {
     if (number.length == 0) return NO;
     

@@ -8,7 +8,7 @@
 
 #import "OKUtils_NSUserDefaults.h"
 
-@implementation NSUserDefaults (OKCategory)
+@implementation NSUserDefaults (OKUtils_Category)
 
 + (id)objectForKey:(NSString *)defaultName {
     return [[NSUserDefaults standardUserDefaults] objectForKey:defaultName];

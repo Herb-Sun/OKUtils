@@ -1,4 +1,19 @@
 PODS:
+  - AFNetworking (3.1.0):
+    - AFNetworking/NSURLSession (= 3.1.0)
+    - AFNetworking/Reachability (= 3.1.0)
+    - AFNetworking/Security (= 3.1.0)
+    - AFNetworking/Serialization (= 3.1.0)
+    - AFNetworking/UIKit (= 3.1.0)
+  - AFNetworking/NSURLSession (3.1.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.1.0)
+  - AFNetworking/Security (3.1.0)
+  - AFNetworking/Serialization (3.1.0)
+  - AFNetworking/UIKit (3.1.0):
+    - AFNetworking/NSURLSession
   - SDWebImage (4.1.0):
     - SDWebImage/Core (= 4.1.0)
   - SDWebImage/Core (4.1.0)
@@ -11,6 +26,8 @@ PODS:
   - XMNetworking/Lib (1.0.2):
     - XMNetworking/Lib/AFNetworking-3.1.0 (= 1.0.2)
   - XMNetworking/Lib/AFNetworking-3.1.0 (1.0.2)
+  - YTKNetwork (2.0.3):
+    - AFNetworking (~> 3.0)
   - YYKit (1.0.9):
     - YYKit/no-arc (= 1.0.9)
   - YYKit/no-arc (1.0.9)
@@ -19,14 +36,17 @@ DEPENDENCIES:
   - SDWebImage
   - SVProgressHUD
   - XMNetworking
+  - YTKNetwork
   - YYKit
 
 SPEC CHECKSUMS:
+  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   SDWebImage: 0e435c14e402a6730315a0fb79f95e68654d55a4
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
   XMNetworking: bcc1d167c4386fb6bfefb0d6c7087f09333c2e09
+  YTKNetwork: c4b0c29c9d639dc050d475de69ee626d53eac598
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 885edadd7befcf418ebf6948a26f8a0fd5da158b
+PODFILE CHECKSUM: e46a0c3d0612d89a2fb430fe27f72e6251e06159
 
 COCOAPODS: 1.2.0

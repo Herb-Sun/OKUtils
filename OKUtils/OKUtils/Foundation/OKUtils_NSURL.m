@@ -60,3 +60,62 @@ NSString *OKURLAntiQuery(NSDictionary *dict)
     }
     return string;
 }
+
+
+@implementation NSURL (OKUtils_Category)
+
+- (NSURL *)URLByAppendingQueryParameter:(NSString *)parameter {
+    
+    NSString *queryStr       = self.query;
+    NSString *resultQueryStr = nil;
+    
+    NSString *resultUrlStr   = nil;
+    NSString *absoluteUrlStr = self.absoluteString;
+    NSRange  hashRange       = [absoluteUrlStr rangeOfString:@"#"];
+    
+    //判断原始url是否包含query部分
+    if (queryStr && queryStr.length > 0) {
+        resultQueryStr = [NSString stringWithFormat:@"%@&%@", queryStr, parameter];
+        resultUrlStr   = [absoluteUrlStr stringByReplacingOccurrencesOfString:queryStr withString:resultQueryStr];
+        
+    } else {
+        resultQueryStr = [NSString stringWithFormat:@"?%@", parameter];
+        if (hashRange.location != NSNotFound) {
+            //先截取hash部分，再拼接query
+            NSString *hashStr = [absoluteUrlStr substringFromIndex:hashRange.location];
+            NSString *subUrl  = [NSString stringWithFormat:@"%@%@", resultQueryStr, hashStr];
+            resultUrlStr = [absoluteUrlStr stringByReplacingOccurrencesOfString:hashStr withString:subUrl];
+            
+        } else {
+            resultUrlStr = [NSString stringWithFormat:@"%@/?%@", absoluteUrlStr, parameter];
+        }
+    }
+    return [NSURL URLWithString:resultUrlStr];
+}
+
+- (NSURL *)URLByAppendingQueryDictionary:(NSDictionary *)queryDictionary {
+    
+    NSMutableArray *queries = [self.query length] > 0 ? @[self.query].mutableCopy : @[].mutableCopy;
+    
+    
+    if (queryDictionary) {
+        [queries addObject:queryDictionary];
+    }
+    NSString *newQuery = [queries componentsJoinedByString:@"&"];
+    
+    if (newQuery.length > 0) {
+        NSArray *queryComponents = [self.absoluteString componentsSeparatedByString:@"?"];
+        if (queryComponents.count > 0) {
+            return [NSURL URLWithString:[NSString stringWithFormat:@"%@%@%@%@%@",
+                                         queryComponents[0],
+                                         @"?",
+                                         newQuery,
+                                         self.fragment.length ? @"#" : @"",
+                                         self.fragment.length ? self.fragment : @""]];
+        }
+    }
+    return self;
+}
+
+@end
+

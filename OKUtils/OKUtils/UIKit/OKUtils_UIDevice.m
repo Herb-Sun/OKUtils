@@ -260,7 +260,7 @@ NSString *deviceRam() {
     return deviceRam;
 }
 
-static inline NSUInteger __OKGetSystemInfo(uint typeSpecifier)
+NS_INLINE NSUInteger __OKGetSystemInfo(uint typeSpecifier)
 {
     size_t size = sizeof(int);
     int result;
