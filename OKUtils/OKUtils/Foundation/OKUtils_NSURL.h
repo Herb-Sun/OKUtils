@@ -9,13 +9,13 @@
 #import <Foundation/Foundation.h>
 
 /// 编码url string
-FOUNDATION_EXPORT NSString *OKURLEncode(NSString *URLString);
+FOUNDATION_EXTERN NSString *OKURLEncode(NSString *URLString);
 /// 解码url string
-FOUNDATION_EXPORT NSString *OKURLDecode(NSString *URLString);
+FOUNDATION_EXTERN NSString *OKURLDecode(NSString *URLString);
 /// 解析url参数
-FOUNDATION_EXPORT NSDictionary *OKURLQuery(NSString *URLString);
+FOUNDATION_EXTERN NSDictionary *OKURLQuery(NSString *URLString);
 /// 将dict转成url string
-FOUNDATION_EXPORT NSString *OKURLAntiQuery(NSDictionary *dict);
+FOUNDATION_EXTERN NSString *OKURLAntiQuery(NSDictionary *dict);
 
 @interface NSURL (OKUtils_Category)
 

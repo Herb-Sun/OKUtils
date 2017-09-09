@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface NSDictionary (OKUtils_Category)
 
 /// 将JSON字符串转换成NSDictionary
-FOUNDATION_EXPORT NSDictionary *OKJSONSerialization(NSString *json);
+FOUNDATION_EXTERN NSDictionary *OKJSONSerialization(NSString *json);
 
 /**
  *  将NSDictionary转换成XML字符串

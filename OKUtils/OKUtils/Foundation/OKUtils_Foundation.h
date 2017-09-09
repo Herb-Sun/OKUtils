@@ -18,5 +18,6 @@
 #import "OKUtils_NSURL.h"
 #import "OKUtils_NSFileManager.h"
 #import "OKUtils_NSData.h"
+#import "OKUtils_NSArray.h"
 
 #endif /* OKUtils_Foundation_h */

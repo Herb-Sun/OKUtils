@@ -10,7 +10,7 @@ target 'OKUtils' do
   pod 'SDWebImage'
   pod 'SVProgressHUD'
   pod 'YYKit'
-  pod 'YTKNetwork'
+#  pod 'YTKNetwork'
 
   target 'OKUtilsTests' do
     inherit! :search_paths
