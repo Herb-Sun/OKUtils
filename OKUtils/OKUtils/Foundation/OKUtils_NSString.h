@@ -18,10 +18,21 @@ FOUNDATION_EXTERN NSString *OKStringSafety(NSString *string);
 /// 安全处理字符串 当string为空时 返回 占位字符串
 FOUNDATION_EXTERN NSString *OKStringValid(NSString *string,  NSString *placeholder);
 
+/**
+ Create string from repeat string
+ 👉OKRepeat(@"a", 2) => @"aa"
+ */
+FOUNDATION_EXTERN NSString *OKRepeat(NSString *string, NSUInteger length);
+
 @interface NSString (OKUtils_Category)
 
-- (CGFloat)widthWithFont:(UIFont *)font containerHeight:(CGFloat)containerHeight;
-- (CGFloat)heightWithFont:(UIFont *)font containerWidth:(CGFloat)containerWidth;
+- (NSString *)padStart:(NSUInteger)length string:(NSString *)string;
+- (NSString *)padEnd:(NSUInteger)length string:(NSString *)string;
+
+- (NSString *)trim;
+- (NSString *)trimWhiteSpace;
+- (NSString *)trimStart;
+- (NSString *)trimEnd;
 
 /**
  *  计算字符串高度
