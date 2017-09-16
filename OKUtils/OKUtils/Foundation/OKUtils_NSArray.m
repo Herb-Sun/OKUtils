@@ -38,19 +38,17 @@
 }
 
 - (NSArray *)chunk:(NSUInteger)size {
-   
-    NSInteger maxSize = size <= 0 ? 1 : size;
-    NSInteger length = self.count;
-    if (!length || maxSize < 1) return @[];
+    if (!self.count) return @[];
+    NSInteger maxSize = MAX(size, 1);
+    if (maxSize >= self.count) return self;
     
     NSInteger index = 0;
     NSInteger resIndex = 0;
-    NSMutableArray *arrayM = [NSMutableArray arrayWithCapacity:(NSUInteger)ceil(length / maxSize)];
-    while (index < length) {
+    NSMutableArray *arrayM = [NSMutableArray arrayWithCapacity:(NSUInteger)ceil(self.count / maxSize)];
+    while (index < self.count) {
         NSArray *subArray = [self subarrayWithRange:NSMakeRange(index, MIN(self.count - index, maxSize))];
         [arrayM insertObject:subArray atIndex:resIndex++];
         index += maxSize;
-        
     }
     return [NSArray arrayWithArray:arrayM];
 }
@@ -74,7 +72,7 @@
 
 - (NSArray *)difference:(NSArray *)array {
     // TODO: --
-    return @[];
+    return self;
 }
 
 - (NSArray *)drop:(NSUInteger)n {
@@ -145,7 +143,7 @@
     NSMutableArray *arrayM = [NSMutableArray arrayWithCapacity:self.count];
     
     [self enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        if (predicate && predicate(obj, idx)) {
+        if (predicate && !predicate(obj, idx)) {
             [arrayM addObject:obj];
         }
     }];

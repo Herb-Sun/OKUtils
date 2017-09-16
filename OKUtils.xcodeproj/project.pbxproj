@@ -11,6 +11,11 @@
 		04454D9C1F61242C0062EBC9 /* OKUtils_NSArrayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 04454D9B1F61242C0062EBC9 /* OKUtils_NSArrayTests.m */; };
 		0450DC031F50254200D0E041 /* OKUtils_NSData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0450DC021F50254200D0E041 /* OKUtils_NSData.m */; };
 		0450DC061F53FE4200D0E041 /* OKUtils_NSUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 0450DC051F53FE4200D0E041 /* OKUtils_NSUserDefaults.m */; };
+		04E196B01F66663900F7BEAA /* OKUtils_NSMutableArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E196AF1F66663900F7BEAA /* OKUtils_NSMutableArray.m */; };
+		04E196B31F66A09A00F7BEAA /* OKShareItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E196B21F66A09900F7BEAA /* OKShareItem.m */; };
+		04E196B61F66AB4A00F7BEAA /* OKShareManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E196B51F66AB4A00F7BEAA /* OKShareManager.m */; };
+		04E196B91F66AB5D00F7BEAA /* OKShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E196B81F66AB5D00F7BEAA /* OKShareViewController.m */; };
+		04E196BC1F66AD9F00F7BEAA /* OKShareAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E196BB1F66AD9F00F7BEAA /* OKShareAnimation.m */; };
 		04F00FB81F4D2C60003DF5AA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F00FB71F4D2C60003DF5AA /* main.m */; };
 		04F00FBB1F4D2C60003DF5AA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F00FBA1F4D2C60003DF5AA /* AppDelegate.m */; };
 		04F00FBE1F4D2C60003DF5AA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F00FBD1F4D2C60003DF5AA /* ViewController.m */; };
@@ -58,6 +63,16 @@
 		0450DC021F50254200D0E041 /* OKUtils_NSData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OKUtils_NSData.m; sourceTree = "<group>"; };
 		0450DC041F53FE4200D0E041 /* OKUtils_NSUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OKUtils_NSUserDefaults.h; sourceTree = "<group>"; };
 		0450DC051F53FE4200D0E041 /* OKUtils_NSUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OKUtils_NSUserDefaults.m; sourceTree = "<group>"; };
+		04E196AE1F66663900F7BEAA /* OKUtils_NSMutableArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OKUtils_NSMutableArray.h; sourceTree = "<group>"; };
+		04E196AF1F66663900F7BEAA /* OKUtils_NSMutableArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OKUtils_NSMutableArray.m; sourceTree = "<group>"; };
+		04E196B11F66A09900F7BEAA /* OKShareItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OKShareItem.h; sourceTree = "<group>"; };
+		04E196B21F66A09900F7BEAA /* OKShareItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OKShareItem.m; sourceTree = "<group>"; };
+		04E196B41F66AB4A00F7BEAA /* OKShareManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OKShareManager.h; sourceTree = "<group>"; };
+		04E196B51F66AB4A00F7BEAA /* OKShareManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OKShareManager.m; sourceTree = "<group>"; };
+		04E196B71F66AB5D00F7BEAA /* OKShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OKShareViewController.h; sourceTree = "<group>"; };
+		04E196B81F66AB5D00F7BEAA /* OKShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OKShareViewController.m; sourceTree = "<group>"; };
+		04E196BA1F66AD9F00F7BEAA /* OKShareAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OKShareAnimation.h; sourceTree = "<group>"; };
+		04E196BB1F66AD9F00F7BEAA /* OKShareAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OKShareAnimation.m; sourceTree = "<group>"; };
 		04EE30C31F540D7C00267569 /* OKUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OKUtils.h; sourceTree = "<group>"; };
 		04F00FB31F4D2C60003DF5AA /* OKUtils.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OKUtils.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04F00FB71F4D2C60003DF5AA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -231,6 +246,8 @@
 				0450DC021F50254200D0E041 /* OKUtils_NSData.m */,
 				04454D981F611C520062EBC9 /* OKUtils_NSArray.h */,
 				04454D991F611C520062EBC9 /* OKUtils_NSArray.m */,
+				04E196AE1F66663900F7BEAA /* OKUtils_NSMutableArray.h */,
+				04E196AF1F66663900F7BEAA /* OKUtils_NSMutableArray.m */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -273,6 +290,14 @@
 			isa = PBXGroup;
 			children = (
 				04F0100F1F4EACA1003DF5AA /* OKShareConst.h */,
+				04E196B11F66A09900F7BEAA /* OKShareItem.h */,
+				04E196B21F66A09900F7BEAA /* OKShareItem.m */,
+				04E196B41F66AB4A00F7BEAA /* OKShareManager.h */,
+				04E196B51F66AB4A00F7BEAA /* OKShareManager.m */,
+				04E196B71F66AB5D00F7BEAA /* OKShareViewController.h */,
+				04E196B81F66AB5D00F7BEAA /* OKShareViewController.m */,
+				04E196BA1F66AD9F00F7BEAA /* OKShareAnimation.h */,
+				04E196BB1F66AD9F00F7BEAA /* OKShareAnimation.m */,
 			);
 			path = OKShare;
 			sourceTree = "<group>";
@@ -507,19 +532,24 @@
 				0450DC031F50254200D0E041 /* OKUtils_NSData.m in Sources */,
 				04F0100C1F4E972A003DF5AA /* OKUtils_NSBundle.m in Sources */,
 				04F00FFF1F4D5FB4003DF5AA /* OKUtils_UIView.m in Sources */,
+				04E196B01F66663900F7BEAA /* OKUtils_NSMutableArray.m in Sources */,
 				04F010E61F4FE5ED003DF5AA /* OKUtils_UINavigationController.m in Sources */,
 				04F00FF51F4D5EC2003DF5AA /* OKUtils_Regex.m in Sources */,
+				04E196BC1F66AD9F00F7BEAA /* OKShareAnimation.m in Sources */,
 				04F00FDC1F4D2FBC003DF5AA /* README.md in Sources */,
 				04454D9A1F611C520062EBC9 /* OKUtils_NSArray.m in Sources */,
 				04F00FEF1F4D5DFC003DF5AA /* OKUtils_Runtime.m in Sources */,
 				04F010F21F4FFE71003DF5AA /* OKUtils_NSFileManager.m in Sources */,
 				04F010E91F4FEAB8003DF5AA /* OKUtils_UIWebView.m in Sources */,
+				04E196B91F66AB5D00F7BEAA /* OKShareViewController.m in Sources */,
 				04F010EF1F4FF359003DF5AA /* OKUtils_NSURL.m in Sources */,
 				0450DC061F53FE4200D0E041 /* OKUtils_NSUserDefaults.m in Sources */,
 				04F00FBE1F4D2C60003DF5AA /* ViewController.m in Sources */,
 				04F00FBB1F4D2C60003DF5AA /* AppDelegate.m in Sources */,
 				04F00FFC1F4D5F94003DF5AA /* OKUtils_UIDevice.m in Sources */,
 				04F010091F4E8154003DF5AA /* OKUtils_UIColor.m in Sources */,
+				04E196B61F66AB4A00F7BEAA /* OKShareManager.m in Sources */,
+				04E196B31F66A09A00F7BEAA /* OKShareItem.m in Sources */,
 				04F010021F4D5FC5003DF5AA /* OKUtils_UIApplication.m in Sources */,
 				04F00FB81F4D2C60003DF5AA /* main.m in Sources */,
 				04F010051F4D5FF4003DF5AA /* OKUtils_UITextField.m in Sources */,

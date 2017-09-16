@@ -10,6 +10,7 @@
 #import <CoreTelephony/CTTelephonyNetworkInfo.h>
 #import <CoreTelephony/CTCarrier.h>
 #import <YYKit.h>
+#import "OKShareViewController.h"
 
 @interface ViewController ()
 
@@ -19,6 +20,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    UIActivityViewController *vc = [[UIActivityViewController alloc] initWithActivityItems:nil applicationActivities:nil];
+#warning hahahh
+    vc.completionHandler = ^(UIActivityType  _Nullable activityType, BOOL completed) {
+        
+    };
+    
+//    UIAlertController
     
 }
 -(NSString *)currentRadioAccessTechnology
@@ -41,6 +49,12 @@
 
 }
 
+- (IBAction)Present:(id)sender {
+    
+    OKShareViewController *shareVc = [[OKShareViewController alloc] init];
+    [self presentViewController:shareVc animated:YES completion:nil];
+    
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

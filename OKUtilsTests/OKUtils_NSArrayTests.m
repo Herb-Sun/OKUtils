@@ -8,6 +8,7 @@
 
 #import <XCTest/XCTest.h>
 #import "OKUtils.h"
+#import "YYKit.h"
 
 @interface OKUtils_NSArrayTests : XCTestCase
 
@@ -96,6 +97,27 @@
 - (void)testUniq {
     NSLog(@"--%@",  [@[@1,@2,@3,@4,@5, @2, @3] unique]);
 
+}
+
+- (void)testNSMutableArray {
+    NSMutableArray *array0 = [NSMutableArray array];
+    NSMutableArray *array1 = [NSMutableArray arrayWithArray:@[@1]];
+    NSMutableArray *array2 = [NSMutableArray arrayWithArray:@[@1,@2]];
+    NSMutableArray *array3 = [NSMutableArray arrayWithArray:@[@1,@2,@3]];
+    NSMutableArray *array4 = [NSMutableArray arrayWithArray:@[@1,@2,@3,@4]];
+    NSMutableArray *array4Tem = [NSMutableArray arrayWithArray:@[@1,@2,@3,@4, @5]];
+    
+//    [array4 chunk:-1]; NSLog(@"---%@", [array4 modelToJSONString]);
+//    [array4 chunk:1]; NSLog(@"---%@", [array4 modelToJSONString]);
+//    [array4 chunk:2]; NSLog(@"---%@", [array4 modelToJSONString]);
+//    [array4 chunk:12]; NSLog(@"---%@", [array4 modelToJSONString]);
+    
+    NSMutableArray *array5 = [NSMutableArray arrayWithArray:@[@0, @1, @"", @" ", [NSNull null], @YES, @NO]];
+    [array5 compact]; NSLog(@"---%@", [array5 modelToJSONString]);
+
+    [array4 dropRight:2]; NSLog(@"---%@", [array4 modelToJSONString]);
+
+    
 }
 
 - (void)testPerformanceExample {

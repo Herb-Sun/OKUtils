@@ -11,7 +11,7 @@
 #import <QuartzCore/QuartzCore.h>
 
 NS_INLINE CGFloat __OKDegreesToRadians(CGFloat degrees) { return degrees * M_PI / 180; }
-NS_INLINE CGFloat __OKRadiansToDegrees(CGFloat radians) { return radians * 180/M_PI; }
+NS_INLINE CGFloat __OKRadiansToDegrees(CGFloat radians) { return radians * 180 / M_PI; }
 
 UIImage *OKImageByColor(UIColor *color)
 {

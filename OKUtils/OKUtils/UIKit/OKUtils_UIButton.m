@@ -20,9 +20,7 @@
     return [objc_getAssociatedObject(self, _cmd) UIEdgeInsetsValue];
 }
 
-/**
- *  设置按钮额外热区
- */
+/// 设置按钮额外热区
 - (void)setTouchAreaInsets:(UIEdgeInsets)touchAreaInsets {
     NSValue *value = [NSValue valueWithUIEdgeInsets:touchAreaInsets];
     objc_setAssociatedObject(self, @selector(touchAreaInsets), value, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
