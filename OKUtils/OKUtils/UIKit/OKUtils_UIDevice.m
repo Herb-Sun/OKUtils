@@ -60,6 +60,72 @@ BOOL OKIsRetina(void)
 NSString *OKDeviceName(void)
 {
     NSDictionary *deviceCode = @{
+                                 @"iPod1,1" : @"iPod Touch",
+                                 @"iPod2,1" : @"iPod Touch",
+                                 @"iPod3,1" : @"iPod Touch",
+                                 @"iPod4,1" : @"iPod Touch",
+                                 @"iPod5,1" : @"iPod Touch",
+                                 
+                                 @"iPhone1,1" : @"iPhone 2G",
+                                 @"iPhone1,2" : @"iPhone 3G",
+                                 @"iPhone2,1" : @"iPhone 3GS",
+                                 @"iPhone3,1" : @"iPhone 4",
+                                 @"iPhone3,2" : @"iPhone 4",
+                                 @"iPhone3,3" : @"iPhone 4",
+                                 @"iPhone4,1" : @"iPhone 4S",
+                                 @"iPhone5,1" : @"iPhone 5",
+                                 @"iPhone5,2" : @"iPhone 5",
+                                 @"iPhone5,3" : @"iPhone 5C",
+                                 @"iPhone5,4" : @"iPhone 5C",
+                                 @"iPhone6,1" : @"iPhone 5S",
+                                 @"iPhone6,2" : @"iPhone 5S",
+                                 @"iPhone7,1" : @"iPhone 6P",
+                                 @"iPhone7,2" : @"iPhone 6",
+                                 @"iPhone8,1" : @"iPhone 6s",
+                                 @"iPhone8,2" : @"iPhone 6sp",
+                                 @"iPhone8,3" : @"iPhone SE",
+                                 @"iPhone8,4" : @"iPhone SE",
+                                 @"iPhone9,1" : @"iPhone 7",
+                                 @"iPhone9,2" : @"iPhone 7p",
+                                 @"iPhone9,3" : @"iPhone 7",
+                                 @"iPhone9,4" : @"iPhone 7p",
+                                 
+                                 @"iPad1,1" : @"iPad",
+                                 @"iPad1,2" : @"iPad 3G",
+                                 @"iPad2,1" : @"iPad 2",
+                                 @"iPad2,2" : @"iPad 2",
+                                 @"iPad2,3" : @"iPad 2",
+                                 @"iPad2,4" : @"iPad 2",
+                                 @"iPad2,5" : @"iPad Mini",
+                                 @"iPad2,6" : @"iPad Mini",
+                                 @"iPad2,7" : @"iPad Mini",
+                                 @"iPad3,1" : @"iPad 3",
+                                 @"iPad3,2" : @"iPad 3",
+                                 @"iPad3,3" : @"iPad 3",
+                                 @"iPad3,4" : @"iPad 4",
+                                 @"iPad3,5" : @"iPad 4",
+                                 @"iPad3,6" : @"iPad 4",
+                                 @"iPad4,1" : @"iPad Air",
+                                 @"iPad4,2" : @"iPad Air",
+                                 @"iPad4,3" : @"iPad Air",
+                                 @"iPad4,4" : @"iPad Mini Retina",
+                                 @"iPad4,5" : @"iPad Mini Retina",
+                                 
+                                 @"i386" : @"Simulator",
+                                 @"x86_64" : @"Simulator",
+                                 };
+    struct utsname systemInfo;
+    uname(&systemInfo);
+    NSString *code = [NSString stringWithCString:systemInfo.machine encoding:NSUTF8StringEncoding];
+    NSString *deviceName = deviceCode[code];
+    return deviceName ?: @"Unknown device";
+}
+
+
+NSString *OKDeviceAbsoluteName(void)
+{
+    
+    NSDictionary *deviceCode = @{
                                  @"iPod1,1" : @"iPod Touch (Original)",
                                  @"iPod2,1" : @"iPod Touch (Second Generation)",
                                  @"iPod3,1" : @"iPod Touch (Third Generation)",
@@ -119,11 +185,7 @@ NSString *OKDeviceName(void)
     NSString *code = [NSString stringWithCString:systemInfo.machine encoding:NSUTF8StringEncoding];
     NSString *deviceName = deviceCode[code];
     
-    if ([deviceName hasPrefix:@"iPhone"]) return @"iPhone";
-    if ([deviceName hasPrefix:@"iPod"]) return @"iPod";
-    if ([deviceName hasPrefix:@"iPad"]) return @"iPad";
-    if ([deviceName hasPrefix:@"Simulator"]) return @"Simulator";
-    return @"Unknown device";
+    return deviceName ?: @"Unknown device";
 }
 
 // 获取设备电量级别

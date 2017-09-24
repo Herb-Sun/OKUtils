@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
+#import "OKUtils_NSString.h"
+
+#define available(device) ([[[OKDeviceName() trim] lowercaseString] containsString:[[device trim] lowercaseString]])
 
 /// 是否是4 inch 屏幕
 UIKIT_EXTERN BOOL OKIsiPhone4Inch(void);
