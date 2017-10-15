@@ -13,12 +13,6 @@
 #define OKLOG_ENABLED DEBUG
 #endif
 
-#if defined(DEBUG) && !defined(NDEBUG)
-#define OKKeywordify autoreleasepool {}
-#else
-#define OKKeywordify try {} @finally {}
-#endif
-
 #if OKLOG_ENABLED
     #define __OKLOG(s, ...) NSLog(@"%@",[NSString stringWithFormat:(s), ##__VA_ARGS__])
     #define OKLogV() __OKLOG(@"\n✅ {%@} %@ > %s Line:(%d)\n", [NSThread isMainThread] ? @"UI" : @"BG", \
@@ -33,35 +27,19 @@
     #define OKLog(...) do{} while(0)
 #endif
 
-#ifndef weakify
-    #if DEBUG
-        #if __has_feature(objc_arc)
-        #define weakify(object) autoreleasepool{} __weak __typeof__(object) weak##_##object = object;
-        #else
-        #define weakify(object) autoreleasepool{} __block __typeof__(object) block##_##object = object;
-        #endif
+#ifndef OKWeakify
+    #if __has_feature(objc_arc)
+    #define OKWeakify(object) __weak __typeof__(object) weak##_##object = object;
     #else
-        #if __has_feature(objc_arc)
-        #define weakify(object) try{} @finally{} {} __weak __typeof__(object) weak##_##object = object;
-        #else
-        #define weakify(object) try{} @finally{} {} __block __typeof__(object) block##_##object = object;
-        #endif
+    #define OKWeakify(object) __block __typeof__(object) block##_##object = object;
     #endif
 #endif
 
-#ifndef strongify
-    #if DEBUG
-        #if __has_feature(objc_arc)
-        #define strongify(object) autoreleasepool{} __typeof__(object) object = weak##_##object;
-        #else
-        #define strongify(object) autoreleasepool{} __typeof__(object) object = block##_##object;
-        #endif
+#ifndef OKStrongify
+    #if __has_feature(objc_arc)
+    #define OKStrongify(object) __typeof__(object) object = weak##_##object;
     #else
-        #if __has_feature(objc_arc)
-        #define strongify(object) try{} @finally{} __typeof__(object) object = weak##_##object;
-        #else
-        #define strongify(object) try{} @finally{} __typeof__(object) object = block##_##object;
-        #endif
+    #define OKStrongify(object) __typeof__(object) object = block##_##object;
     #endif
 #endif
 

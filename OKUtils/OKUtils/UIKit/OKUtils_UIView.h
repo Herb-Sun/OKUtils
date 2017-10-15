@@ -6,8 +6,76 @@
 //  Copyright © 2017年 HERB. All rights reserved.
 //
 
+#import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 
-@interface OKUtils_UIView : NSObject
+NS_ASSUME_NONNULL_BEGIN
+
+@interface UIView (OKUtils_Category_Frame)
+
+@property (nonatomic, assign) CGFloat x;
+@property (nonatomic, assign) CGFloat y;
+@property (nonatomic, assign) CGFloat maxX;
+@property (nonatomic, assign) CGFloat maxY;
+@property (nonatomic, assign) CGFloat centerX;
+@property (nonatomic, assign) CGFloat centerY;
+@property (nonatomic, assign) CGFloat width;
+@property (nonatomic, assign) CGFloat height;
+@property (nonatomic, assign) CGPoint origin;
+@property (nonatomic, assign) CGSize  size;
 
 @end
+
+#pragma mark - OKUtils_Category_Border
+
+typedef NS_OPTIONS(NSInteger, OKBorderType) {
+    OKBorderTypeNone    = 0,
+    OKBorderTypeTop     = 1 << 0,
+    OKBorderTypeLeft    = 1 << 1,
+    OKBorderTypeBottom  = 1 << 2,
+    OKBorderTypeRight   = 1 << 3,
+    OKBorderTypeAll     = OKBorderTypeTop | OKBorderTypeLeft | OKBorderTypeBottom | OKBorderTypeRight,
+};
+
+@interface UIView (OKUtils_Category_Border)
+
+- (void)clearBorderStyle;
+
+/**
+ 添加边框
+ @param color       边框颜色
+ @param borderWidth 边框宽度
+ @param type        边框类型
+ */
+- (void)addBorderWithColor:(UIColor *)color borderWidth:(CGFloat)borderWidth borderType:(OKBorderType)type;
+
+/**
+ 添加边框
+ @param color       边框颜色
+ @param borderWidth 边框宽度
+ @param margin      上边框,下边框的左边距
+ @param type        边框类型
+ */
+- (void)addBorderWithColor:(UIColor *)color borderWidth:(CGFloat)borderWidth margin:(CGFloat)margin borderType:(OKBorderType)type;
+
+/**
+ 添加边框
+ @param color       边框颜色
+ @param borderWidth 边框宽度
+ @param opacity     边框的透明度(取值范围0-1)
+ @param type        边框类型
+ */
+- (void)addBorderWithColor:(UIColor *)color borderWidth:(CGFloat)borderWidth opacity:(CGFloat)opacity borderType:(OKBorderType)type;
+
+/**
+ 添加边框
+ @param color       边框颜色
+ @param borderWidth 边框宽度
+ @param opacity     边框的透明度(取值范围0-1)
+ @param margin      上边框,下边框的左边距
+ @param type        边框类型
+ */
+- (void)addBorderWithColor:(UIColor *)color borderWidth:(CGFloat)borderWidth opacity:(CGFloat)opacity margin:(CGFloat)margin borderType:(OKBorderType)type;
+
+@end
+NS_ASSUME_NONNULL_END

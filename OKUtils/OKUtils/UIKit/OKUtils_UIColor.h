@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 /// 随机颜色
 UIKIT_EXTERN UIColor *OKColor_Random(void);
 /// 反转颜色
@@ -27,3 +29,5 @@ UIKIT_EXTERN UIColor *OKColor_HexStringA(NSString *hexString, CGFloat alpha);
 UIKIT_EXTERN UIColor *OKColor_Gradient(NSArray<UIColor *> *colors, CGFloat height);
 /// 获取图片颜色
 UIKIT_EXTERN UIColor *OKColorFromImage(UIImage *image);
+
+NS_ASSUME_NONNULL_END

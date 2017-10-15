@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 /// 图片滤镜类型
 typedef NS_ENUM (NSInteger, OKImageEffectStyle) {
     OKImageEffectStyleNone = 0,  //!< 无处理
@@ -123,3 +125,6 @@ UIKIT_EXTERN UIImage *OKImageByConvertGray(UIImage *theImage);
 
 /// 合并图片
 UIKIT_EXTERN UIImage *OKImageByMerged(UIImage *firstImage, UIImage *secondImage);
+
+NS_ASSUME_NONNULL_END
+
