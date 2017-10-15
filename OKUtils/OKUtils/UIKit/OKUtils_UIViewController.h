@@ -16,29 +16,29 @@ typedef void (^OKBackButtonHandler)(UIViewController *vc);
 @interface UIViewController (OKUtils_Category)
 
 /// UIViewController 是否可见
-- (BOOL)ok_isVisible;
+- (BOOL)isVisible;
 
 /**
  *  获取当前显示的ViewController
  */
-+ (nullable UIViewController *)ok_fetchCurrentViewController;
++ (nullable UIViewController *)fetchCurrentViewController;
 
 /**
  *  视图层级
  *
  *  @return 视图层级字符串
  */
-- (NSString *)ok_recursiveDescription;
+- (NSString *)recursiveDescription;
 
-- (void)ok_backButtonTouched:(OKBackButtonHandler)backButtonHandler;
+- (void)backButtonTouched:(OKBackButtonHandler)backButtonHandler;
 
-- (void)ok_addChildViewController:(UIViewController *)controller;
-- (void)ok_addChildViewController:(UIViewController *)controller atFrame:(CGRect)frame;
-- (void)ok_addChildViewController:(UIViewController *)controller inView:(UIView *)view atFrame:(CGRect)frame;
+- (void)addChildViewController:(UIViewController *)controller;
+- (void)addChildViewController:(UIViewController *)controller atFrame:(CGRect)frame;
+- (void)addChildViewController:(UIViewController *)controller inView:(UIView *)view atFrame:(CGRect)frame;
 
-- (void)ok_removeChildViewController:(UIViewController *)controller;
+- (void)removeChildViewController:(UIViewController *)controller;
 
-- (void)ok_dismissToRootViewControllerAnimated:(BOOL)flag;
+- (void)dismissToRootViewControllerAnimated:(BOOL)flag;
 
 @end
 

@@ -38,11 +38,11 @@
 
 @implementation UIViewController (OKUtils_Category)
 
-- (BOOL)ok_isVisible {
+- (BOOL)isVisible {
     return [self isViewLoaded] && self.view.window;
 }
 
-+ (UIViewController *)ok_fetchCurrentViewController {
++ (UIViewController *)fetchCurrentViewController {
     UIViewController *result = nil;
     
     UIWindow *window = [UIApplication sharedApplication].delegate.window;
@@ -72,13 +72,13 @@
     return [self __topViewController:result];
 }
 
-- (NSString *)ok_recursiveDescription {
+- (NSString *)recursiveDescription {
     NSMutableString *description = [NSMutableString stringWithFormat:@"\n"];
     [self __addDescriptionToString:description indentLevel:0];
     return description;
 }
 
-- (void)ok_backButtonTouched:(OKBackButtonHandler)backButtonHandler {
+- (void)backButtonTouched:(OKBackButtonHandler)backButtonHandler {
     objc_setAssociatedObject(self, @selector(backButtonHandler), backButtonHandler, OBJC_ASSOCIATION_COPY);
 }
 
@@ -86,15 +86,15 @@
     return objc_getAssociatedObject(self, _cmd);
 }
 
-- (void)ok_addChildViewController:(UIViewController *)controller {
-    [self ok_addChildViewController:controller inView:self.view atFrame:self.view.bounds];
+- (void)addChildViewController:(UIViewController *)controller {
+    [self addChildViewController:controller inView:self.view atFrame:self.view.bounds];
 }
 
-- (void)ok_addChildViewController:(UIViewController *)controller atFrame:(CGRect)frame {
-    [self ok_addChildViewController:controller inView:self.view atFrame:frame];
+- (void)addChildViewController:(UIViewController *)controller atFrame:(CGRect)frame {
+    [self addChildViewController:controller inView:self.view atFrame:frame];
 }
 
-- (void)ok_addChildViewController:(UIViewController *)controller inView:(UIView *)view atFrame:(CGRect)frame {
+- (void)addChildViewController:(UIViewController *)controller inView:(UIView *)view atFrame:(CGRect)frame {
     [controller willMoveToParentViewController:self];
     [self addChildViewController:controller];
     
@@ -104,13 +104,13 @@
     [controller didMoveToParentViewController:self];
 }
 
-- (void)ok_removeChildViewController:(UIViewController *)controller {
+- (void)removeChildViewController:(UIViewController *)controller {
     [controller willMoveToParentViewController:nil];
     [controller removeFromParentViewController];
     [controller.view removeFromSuperview];
 }
 
-- (void)ok_dismissToRootViewControllerAnimated:(BOOL)flag {
+- (void)dismissToRootViewControllerAnimated:(BOOL)flag {
     UIViewController *vc = self;
     while (vc.presentingViewController) {
         vc = vc.presentingViewController;
@@ -120,7 +120,7 @@
 
 @end
 
-@implementation UINavigationController (ShouldPopItem)
+@implementation UINavigationController (OKUtils_PrivateCategory)
 
 - (BOOL)navigationBar:(UINavigationBar *)navigationBar shouldPopItem:(UINavigationItem *)item {
     
