@@ -10,7 +10,6 @@
 #import <Foundation/Foundation.h>
 
 /// 随机颜色
-
 UIKIT_EXTERN UIColor *OKColor_Random(void);
 /// 反转颜色
 UIKIT_EXTERN UIColor *OKColor_Inverted(UIColor *color);
