@@ -34,7 +34,7 @@ typedef NS_OPTIONS(NSInteger, OKBorderType) {
     OKBorderTypeLeft    = 1 << 1,
     OKBorderTypeBottom  = 1 << 2,
     OKBorderTypeRight   = 1 << 3,
-    OKBorderTypeAll     = OKBorderTypeTop | OKBorderTypeLeft | OKBorderTypeBottom | OKBorderTypeRight,
+    OKBorderTypeAll     = ~0L,
 };
 
 @interface UIView (OKUtils_Category_Border)
@@ -78,4 +78,23 @@ typedef NS_OPTIONS(NSInteger, OKBorderType) {
 - (void)addBorderWithColor:(UIColor *)color borderWidth:(CGFloat)borderWidth opacity:(CGFloat)opacity margin:(CGFloat)margin borderType:(OKBorderType)type;
 
 @end
+
+#pragma mark - OKUtils_Category_Corner
+
+@interface UIView (OKUtils_Category_Corner)
+
+- (void)roundCornerWithRadius:(CGFloat)radius;
+- (void)roundWidthStyle;
+- (void)roundHeightStyle;
+
+/**
+ 切角
+
+ @param corners corners
+ @param radius radius
+ */
+- (void)roundCorners:(UIRectCorner)corners radius:(CGFloat)radius;
+
+@end
+
 NS_ASSUME_NONNULL_END

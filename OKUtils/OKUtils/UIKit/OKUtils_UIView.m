@@ -131,3 +131,35 @@
 }
 
 @end
+
+#pragma mark - OKUtils_Category_Corner
+
+@implementation UIView (OKUtils_Category_Corner)
+
+- (void)roundCornerWithRadius:(CGFloat)radius {
+    if (CGRectEqualToRect(self.frame, CGRectZero)) { [self layoutIfNeeded]; }
+    self.layer.cornerRadius  = radius;
+    self.layer.masksToBounds = YES;
+}
+
+- (void)roundWidthStyle {
+    [self roundCornerWithRadius:(CGRectGetWidth(self.frame) * 0.5)];
+}
+
+- (void)roundHeightStyle {
+    [self roundCornerWithRadius:(CGRectGetHeight(self.frame) * 0.5)];
+}
+
+- (void)roundCorners:(UIRectCorner)corners radius:(CGFloat)radius {
+    
+    if (CGRectEqualToRect(self.frame, CGRectZero)) { [self layoutIfNeeded]; }
+    
+    CAShapeLayer *maskLayer = [CAShapeLayer layer];
+    maskLayer.path = [UIBezierPath bezierPathWithRoundedRect:self.bounds
+                                           byRoundingCorners:corners
+                                                 cornerRadii:(CGSize){radius, radius}].CGPath;
+    self.clipsToBounds = YES;
+}
+
+@end
+
