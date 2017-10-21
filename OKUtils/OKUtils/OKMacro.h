@@ -53,7 +53,7 @@
 #endif
 
 #ifndef OKFormatString
-#define OKFormatString(str,...) [NSString stringWithFormat:str, ##__VA_ARGS__]
+#define OKFormatString(str, ...) [NSString stringWithFormat:str, ##__VA_ARGS__]
 #endif
 
 #ifndef OKExecOnce

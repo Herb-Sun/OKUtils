@@ -26,6 +26,12 @@
     vc.completionHandler = ^(UIActivityType  _Nullable activityType, BOOL completed) {
         
     };
+    
+    if (@available(iOS 11.0, *)) {
+        // iOS 11 Later
+    } else {
+        
+    }
 }
 -(NSString *)currentRadioAccessTechnology
 {

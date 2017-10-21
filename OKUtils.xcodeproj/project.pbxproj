@@ -11,6 +11,7 @@
 		04454D9C1F61242C0062EBC9 /* OKUtils_NSArrayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 04454D9B1F61242C0062EBC9 /* OKUtils_NSArrayTests.m */; };
 		0450DC031F50254200D0E041 /* OKUtils_NSData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0450DC021F50254200D0E041 /* OKUtils_NSData.m */; };
 		0450DC061F53FE4200D0E041 /* OKUtils_NSUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 0450DC051F53FE4200D0E041 /* OKUtils_NSUserDefaults.m */; };
+		04DF59D51F972D070069B8C5 /* OKUtils_NSDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DF59D41F972D070069B8C5 /* OKUtils_NSDate.m */; };
 		04E196B01F66663900F7BEAA /* OKUtils_NSMutableArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E196AF1F66663900F7BEAA /* OKUtils_NSMutableArray.m */; };
 		04E196B31F66A09A00F7BEAA /* OKShareItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E196B21F66A09900F7BEAA /* OKShareItem.m */; };
 		04E196B61F66AB4A00F7BEAA /* OKShareManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E196B51F66AB4A00F7BEAA /* OKShareManager.m */; };
@@ -65,6 +66,8 @@
 		0450DC021F50254200D0E041 /* OKUtils_NSData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OKUtils_NSData.m; sourceTree = "<group>"; };
 		0450DC041F53FE4200D0E041 /* OKUtils_NSUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OKUtils_NSUserDefaults.h; sourceTree = "<group>"; };
 		0450DC051F53FE4200D0E041 /* OKUtils_NSUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OKUtils_NSUserDefaults.m; sourceTree = "<group>"; };
+		04DF59D31F972D070069B8C5 /* OKUtils_NSDate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OKUtils_NSDate.h; sourceTree = "<group>"; };
+		04DF59D41F972D070069B8C5 /* OKUtils_NSDate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OKUtils_NSDate.m; sourceTree = "<group>"; };
 		04E196AE1F66663900F7BEAA /* OKUtils_NSMutableArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OKUtils_NSMutableArray.h; sourceTree = "<group>"; };
 		04E196AF1F66663900F7BEAA /* OKUtils_NSMutableArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OKUtils_NSMutableArray.m; sourceTree = "<group>"; };
 		04E196B11F66A09900F7BEAA /* OKShareItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OKShareItem.h; sourceTree = "<group>"; };
@@ -159,6 +162,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04DF59D61F9741B70069B8C5 /* OKMarquee */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = OKMarquee;
+			sourceTree = "<group>";
+		};
 		04F00FAA1F4D2C60003DF5AA = {
 			isa = PBXGroup;
 			children = (
@@ -250,6 +260,8 @@
 				04F010F11F4FFE71003DF5AA /* OKUtils_NSFileManager.m */,
 				0450DC011F50254200D0E041 /* OKUtils_NSData.h */,
 				0450DC021F50254200D0E041 /* OKUtils_NSData.m */,
+				04DF59D31F972D070069B8C5 /* OKUtils_NSDate.h */,
+				04DF59D41F972D070069B8C5 /* OKUtils_NSDate.m */,
 				04454D981F611C520062EBC9 /* OKUtils_NSArray.h */,
 				04454D991F611C520062EBC9 /* OKUtils_NSArray.m */,
 				04E196AE1F66663900F7BEAA /* OKUtils_NSMutableArray.h */,
@@ -291,6 +303,7 @@
 		04F0100D1F4EA6C1003DF5AA /* OKComponent */ = {
 			isa = PBXGroup;
 			children = (
+				04DF59D61F9741B70069B8C5 /* OKMarquee */,
 				04F0100E1F4EAAD9003DF5AA /* OKShare */,
 			);
 			path = OKComponent;
@@ -555,6 +568,7 @@
 				04E196B91F66AB5D00F7BEAA /* OKShareViewController.m in Sources */,
 				04F010EF1F4FF359003DF5AA /* OKUtils_NSURL.m in Sources */,
 				0450DC061F53FE4200D0E041 /* OKUtils_NSUserDefaults.m in Sources */,
+				04DF59D51F972D070069B8C5 /* OKUtils_NSDate.m in Sources */,
 				04F00FBE1F4D2C60003DF5AA /* ViewController.m in Sources */,
 				04F00FBB1F4D2C60003DF5AA /* AppDelegate.m in Sources */,
 				04F00FFC1F4D5F94003DF5AA /* OKUtils_UIDevice.m in Sources */,
