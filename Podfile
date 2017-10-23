@@ -6,13 +6,14 @@ target 'OKUtils' do
   # use_frameworks!
 
   # Pods for OKUtils
-  pod 'XMNetworking'
+#  pod 'XMNetworking'
+#  pod 'YTKNetwork'
   pod 'SDWebImage'
   pod 'SVProgressHUD'
   pod 'YYKit'
-  pod 'YTKNetwork'
   pod 'XAspect'
   pod 'Aspects'
+  pod 'BlocksKit'
   #pod 'OAStackView'
   target 'OKUtilsTests' do
     inherit! :search_paths

@@ -12,6 +12,7 @@
 #import <YYKit.h>
 #import "OKShareViewController.h"
 #import "OKUtils.h"
+#import "TestCarouseViewController.h"
 
 @interface ViewController ()
 
@@ -26,12 +27,6 @@
     vc.completionHandler = ^(UIActivityType  _Nullable activityType, BOOL completed) {
         
     };
-    
-    if (@available(iOS 11.0, *)) {
-        // iOS 11 Later
-    } else {
-        
-    }
 }
 -(NSString *)currentRadioAccessTechnology
 {
@@ -59,11 +54,9 @@
     [self presentViewController:shareVc animated:YES completion:nil];
     
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)testCarousel:(id)sender {
+    TestCarouseViewController *testVc = [[TestCarouseViewController alloc] init];
+    [self presentViewController:testVc animated:YES completion:nil];
 }
-
 
 @end
