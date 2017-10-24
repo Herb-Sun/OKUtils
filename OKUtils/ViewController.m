@@ -12,7 +12,7 @@
 #import <YYKit.h>
 #import "OKShareViewController.h"
 #import "OKUtils.h"
-#import "TestCarouseViewController.h"
+#import "TestCarouselViewController.h"
 
 @interface ViewController ()
 
@@ -55,7 +55,7 @@
     
 }
 - (IBAction)testCarousel:(id)sender {
-    TestCarouseViewController *testVc = [[TestCarouseViewController alloc] init];
+    TestCarouselViewController *testVc = [[TestCarouselViewController alloc] init];
     [self presentViewController:testVc animated:YES completion:nil];
 }
 

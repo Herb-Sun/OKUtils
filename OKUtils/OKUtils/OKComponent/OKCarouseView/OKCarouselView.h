@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
-
 @class OKCarouselView;
 
 NS_ASSUME_NONNULL_BEGIN
@@ -18,59 +17,54 @@ typedef NS_ENUM(NSInteger, OKCarouselViewScrollDirection) {
     OKCarouselViewScrollDirectionHorizontal = UICollectionViewScrollDirectionHorizontal
 };
 
-/**
- Scroll Style
- 
- - OKCarouselViewScrollStylePositive:
- if scrollDirection == Vetical style is bottom to top
- if scrollDirection == Horizontal style is right to left
- 
- - OKCarouselViewScrollStyleOpposite:
- if scrollDirection == Vetical style is top to bottom
- if scrollDirection == Horizontal style is left to right
- */
 typedef NS_ENUM(NSInteger, OKCarouselViewScrollStyle) {
+    /**
+     if scrollDirection is Vetical so scrollStyle is bottom to top,
+     if scrollDirection is Horizontal so scrollStyle is right to left
+     */
     OKCarouselViewScrollStylePositive,
+    /**
+     if scrollDirection is Vetical so scrollStyle is top to bottom,
+     if scrollDirection is Horizontal so scrollStyle is left to right
+     */
     OKCarouselViewScrollStyleOpposite
 };
 
-@protocol OKCarouselViewDataSource <UICollectionViewDataSource>
+@protocol OKCarouselViewDataSource <NSObject>
 @required
 - (NSInteger)numberOfItemsInCarouselView:(OKCarouselView *)carouselView;
 
-// The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
+// The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndex:
 - (__kindof UICollectionViewCell *)carouselView:(OKCarouselView *)carouselView
                              cellForItemAtIndex:(NSInteger)index;
 
 @end
 
-@protocol OKCarouselViewDelegate <UICollectionViewDelegate>
+@protocol OKCarouselViewDelegate <NSObject>
 @optional
 
-- (void)carouselCollectionView:(OKCarouselView *)carouselCollectionView didScrollAtIndex:(NSInteger)index;
+- (void)carouselView:(OKCarouselView *)carouselView didScrollAtIndex:(NSInteger)index;
 
-- (void)carouselCollectionView:(OKCarouselView *)carouselCollectionView didSelectItemAtIndex:(NSInteger)index;
+- (void)carouselView:(OKCarouselView *)carouselView didSelectItemAtIndex:(NSInteger)index;
 
 @end
 
 
 @interface OKCarouselView : UIView
 
+@property (nonatomic, assign) OKCarouselViewScrollDirection scrollDirection; ///< default is OKCarouselViewScrollDirectionVertical
+
+@property (nonatomic, assign) OKCarouselViewScrollStyle scrollStyle; ///< default is OKCarouselViewScrollStylePositive
+
 @property (nonatomic, weak, nullable) id <OKCarouselViewDelegate> delegate;
 @property (nonatomic, weak, nullable) id <OKCarouselViewDataSource> dataSource;
 
-@property (nonatomic, assign) OKCarouselViewScrollDirection scrollDirection; // default is OKCarouselViewScrollDirectionVertical
+@property (nonatomic, assign, getter=isAutoLoop) BOOL autoLoop; ///< default is NO
+@property (nonatomic, assign) CGFloat loopTimeInterval; ///< default is 3.0, Minimal is 0.25
+@property (nonatomic, copy) NSRunLoopMode runloopMode; ///< default is NSDefaultRunLoopMode
 
-@property (nonatomic, assign) OKCarouselViewScrollStyle scrollStyle;
-
-@property (nonatomic, assign, getter=isAutoRotation) BOOL autoRotation;
-
-@property (nonatomic, assign) CGFloat ratationTimeInterval;
-
-@property (nonatomic, copy) NSRunLoopMode runloopMode;
-
-- (void)startRotation;
-- (void)stopRotation;
+- (void)startLoop;
+- (void)stopLoop;
 
 - (void)registerClass:(nullable Class)cellClass forCellWithReuseIdentifier:(NSString *)identifier;
 - (void)registerNib:(nullable UINib *)nib forCellWithReuseIdentifier:(NSString *)identifier;
@@ -81,4 +75,3 @@ typedef NS_ENUM(NSInteger, OKCarouselViewScrollStyle) {
 @end
 
 NS_ASSUME_NONNULL_END
-
