@@ -10,12 +10,11 @@
 #import "OKCarouselView.h"
 #import "TestCarouselViewCell.h"
 #import "OKUtils.h"
-#import "TestDeallocView.h"
 
 @interface TestCarouselViewController ()<OKCarouselViewDataSource, OKCarouselViewDelegate>
 
+@property (weak, nonatomic) IBOutlet OKCarouselView *carouselView;
 @property (nonatomic, strong) NSArray *dataSource;
-@property (nonatomic, strong) OKCarouselView *carouselView;
 @end
 
 @implementation TestCarouselViewController
@@ -25,20 +24,16 @@
     self.view.backgroundColor = OKColor_Random();
     _dataSource = @[@"1", @"2", @"3", @"4"];
     
-    _carouselView = [[OKCarouselView alloc] init];
-    _carouselView.frame = CGRectMake(10, 200, self.view.width - 20, 200);
-    _carouselView.delegate = self;
-    _carouselView.dataSource = self;
-    _carouselView.autoLoop = YES;
+//    _carouselView = [[OKCarouselView alloc] init];
+//    _carouselView.frame = CGRectMake(10, 200, self.view.width - 20, 200);
+//    _carouselView.delegate = self;
+//    _carouselView.dataSource = self;
+//    _carouselView.autoLoop = YES;
     _carouselView.scrollDirection = OKCarouselViewScrollDirectionHorizontal;
     _carouselView.scrollStyle = OKCarouselViewScrollStylePositive;
-    [self.view addSubview:_carouselView];
     
     [_carouselView registerClass:[TestCarouselViewCell class] forCellWithReuseIdentifier:NSStringFromClass(TestCarouselViewCell.class)];
     
-    
-    TestDeallocView *testVeiw = [[TestDeallocView alloc] init];
-    [self.view addSubview:testVeiw];
 }
 
 - (NSInteger)numberOfItemsInCarouselView:(OKCarouselView *)carouselView {

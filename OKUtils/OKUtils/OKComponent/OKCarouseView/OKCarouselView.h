@@ -50,17 +50,17 @@ typedef NS_ENUM(NSInteger, OKCarouselViewScrollStyle) {
 @end
 
 
-@interface OKCarouselView : UIView
+IB_DESIGNABLE @interface OKCarouselView : UIView
 
-@property (nonatomic, assign) OKCarouselViewScrollDirection scrollDirection; ///< default is OKCarouselViewScrollDirectionVertical
+@property (nonatomic, assign) IBInspectable OKCarouselViewScrollDirection scrollDirection; ///< default is OKCarouselViewScrollDirectionVertical
 
-@property (nonatomic, assign) OKCarouselViewScrollStyle scrollStyle; ///< default is OKCarouselViewScrollStylePositive
+@property (nonatomic, assign) IBInspectable OKCarouselViewScrollStyle scrollStyle; ///< default is OKCarouselViewScrollStylePositive
 
-@property (nonatomic, weak, nullable) id <OKCarouselViewDelegate> delegate;
-@property (nonatomic, weak, nullable) id <OKCarouselViewDataSource> dataSource;
+@property (nonatomic, weak, nullable) IBOutlet id <OKCarouselViewDelegate> delegate;
+@property (nonatomic, weak, nullable) IBOutlet id <OKCarouselViewDataSource> dataSource;
 
-@property (nonatomic, assign, getter=isAutoLoop) BOOL autoLoop; ///< default is NO
-@property (nonatomic, assign) CGFloat loopTimeInterval; ///< default is 3.0, Minimal is 0.25
+@property (nonatomic, assign, getter=isAutoLoop) IBInspectable BOOL autoLoop; ///< default is NO
+@property (nonatomic, assign) IBInspectable CGFloat loopTimeInterval; ///< default is 3.0, Minimal is 0.25
 @property (nonatomic, copy) NSRunLoopMode runloopMode; ///< default is NSDefaultRunLoopMode
 
 - (void)startLoop;
