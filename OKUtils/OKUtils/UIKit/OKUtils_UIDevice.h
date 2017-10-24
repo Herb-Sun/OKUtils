@@ -29,6 +29,7 @@ UIKIT_EXTERN NSString *OKDeviceName(void);
 /// 获取设备电量级别
 UIKIT_EXTERN float OKBatteryLevel(void);
 UIKIT_EXTERN NSString *OKIPAddress(void);
+/// 获取设备mac地址
 UIKIT_EXTERN NSString *OKMacAddress(void);
 
 /// CPU个数

@@ -9,6 +9,7 @@
 #import "OKUtils_UIDevice.h"
 #include <sys/types.h>
 #include <sys/sysctl.h>
+#import <AdSupport/AdSupport.h>
 #import <ifaddrs.h>
 #import <arpa/inet.h>
 #import <sys/socket.h>
@@ -262,6 +263,15 @@ NSString *OKMacAddress(void)
     return macAddr;
 }
 
+NSString *OKIDFA(void) {
+    return [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
+}
+
+NSDate *OKLastestSystemUptime(void) {
+    NSTimeInterval time = [[NSProcessInfo processInfo] systemUptime];
+    return [[NSDate alloc] initWithTimeIntervalSinceNow:(0 - time)];
+}
+
 // 获取设备内存容量 (待优化)
 NSString *deviceRam() {
     struct utsname systemInfo;
@@ -342,6 +352,10 @@ NSUInteger OKBUS_FREQ(void) { return __OKGetSystemInfo(HW_BUS_FREQ); }
 NSUInteger OKPhysicalRamSize(void) { return __OKGetSystemInfo(HW_MEMSIZE); }
 /// 内存大小
 NSUInteger OKTotalMemorySize(void) { return __OKGetSystemInfo(HW_PHYSMEM); }
+
+
+
+
 
 long long OKFreeDiskSpace(void) {
     struct statfs buf;

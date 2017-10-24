@@ -302,7 +302,8 @@
             [self.delegate carouselView:self didScrollAtIndex:_lastestIndex];
         }
     }
-    /// 控制循环
+    
+    // Control Loop
     NSIndexPath *indexPath;
     if (_scrollDirection == OKCarouselViewScrollDirectionHorizontal) {
         if (scrollView.contentOffset.x <= 0) {
@@ -343,7 +344,6 @@
         flowLayout.minimumLineSpacing = 0.0;
         flowLayout.minimumInteritemSpacing = 0.0;
         flowLayout.estimatedItemSize = CGSizeZero;
-        
         
         _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flowLayout];
         _collectionView.delegate = self;
