@@ -29,7 +29,7 @@
 //    _carouselView.delegate = self;
 //    _carouselView.dataSource = self;
 //    _carouselView.autoLoop = YES;
-    _carouselView.scrollDirection = OKCarouselViewScrollDirectionHorizontal;
+    _carouselView.scrollDirection = OKCarouselViewScrollDirectionVertical;
     _carouselView.scrollStyle = OKCarouselViewScrollStylePositive;
     
     [_carouselView registerClass:[TestCarouselViewCell class] forCellWithReuseIdentifier:NSStringFromClass(TestCarouselViewCell.class)];
@@ -43,10 +43,22 @@
 - (UICollectionViewCell *)carouselView:(OKCarouselView *)carouselView
                     cellForItemAtIndex:(NSInteger)index {
     
-    
-    
     TestCarouselViewCell *cell = [carouselView dequeueReusableCellWithReuseIdentifier:NSStringFromClass(TestCarouselViewCell.class) forIndex:index];
-    cell.backgroundColor = OKColor_Random();
+    if (index == 0) {
+        cell.backgroundColor = [UIColor blueColor];
+    }
+    else if (index == 1) {
+        cell.backgroundColor = [UIColor redColor];
+    }
+    else if (index == 2) {
+        cell.backgroundColor = [UIColor grayColor];
+    }
+    else if (index == 3) {
+        cell.backgroundColor = [UIColor yellowColor];
+    }
+    else if (index == 4) {
+        cell.backgroundColor = [UIColor orangeColor];
+    }
     cell.titleLabel.text = [self.dataSource objectAtIndex:index];
     return cell;
 }

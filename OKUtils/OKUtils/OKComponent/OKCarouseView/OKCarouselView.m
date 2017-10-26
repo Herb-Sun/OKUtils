@@ -29,7 +29,8 @@
 #pragma mark - LifeCycle
 
 - (instancetype)initWithFrame:(CGRect)frame {
-    if (self = [super initWithFrame:frame]) {
+    self = [super initWithFrame:frame];
+    if (self) {
         [self setupInitialized];
         [self setupNotificationAndObserver];
     }
@@ -37,7 +38,8 @@
 }
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {
-    if (self = [super initWithCoder:aDecoder]) {
+    self = [super initWithCoder:aDecoder];
+    if (self) {
         [self setupInitialized];
         [self setupNotificationAndObserver];
     }
@@ -48,6 +50,7 @@
     
     _scrollDirection = OKCarouselViewScrollDirectionVertical;
     _scrollStyle = OKCarouselViewScrollStylePositive;
+    _scrollEnabled = YES;
     _autoLoop = NO;
     _loopTimeInterval = 3.0;
     _runloopMode = NSDefaultRunLoopMode;
@@ -101,10 +104,6 @@
     }
 
     [self initialCollectionViewIndex];
-    
-    if ([self.delegate respondsToSelector:@selector(carouselView:didScrollAtIndex:)]) {
-        [self.delegate carouselView:self didScrollAtIndex:0];
-    }
 }
 
 - (void)willMoveToSuperview:(UIView *)newSuperview {
@@ -122,7 +121,9 @@
 #pragma mark - Public
 
 - (void)setScrollDirection:(OKCarouselViewScrollDirection)scrollDirection {
+    if (_scrollDirection == scrollDirection) return;
     _scrollDirection = scrollDirection;
+
     if ([self.collectionView.collectionViewLayout isKindOfClass:[UICollectionViewFlowLayout class]]) {
         UICollectionViewFlowLayout *flowLayout = (UICollectionViewFlowLayout *)self.collectionView.collectionViewLayout;
         flowLayout.scrollDirection = scrollDirection;
@@ -131,27 +132,40 @@
 }
 
 - (void)setScrollStyle:(OKCarouselViewScrollStyle)scrollStyle {
+    if (_scrollStyle == scrollStyle) return;
     _scrollStyle = scrollStyle;
     [self resetTimer];
 }
 
+- (void)setScrollEnabled:(BOOL)scrollEnabled {
+    if (_scrollEnabled == scrollEnabled) return;
+    _scrollEnabled = scrollEnabled;
+    self.collectionView.scrollEnabled = scrollEnabled;
+}
+
 - (void)setAutoLoop:(BOOL)autoLoop {
+    if (_autoLoop == autoLoop) return;
     _autoLoop = autoLoop;
     [self resetTimer];
 }
 
 - (void)setLoopTimeInterval:(CGFloat)loopTimeInterval {
+    if (_loopTimeInterval == loopTimeInterval) return;
     _loopTimeInterval = MAX(loopTimeInterval, 0.25);
     [self resetTimer];
 }
 
 - (void)setRunloopMode:(NSRunLoopMode)runloopMode {
+    if (_runloopMode == runloopMode) return;
     _runloopMode = runloopMode;
     [self resetTimer];
 }
 
 - (void)startLoop {
-    if (_autoLoop && self.collectionView.scrollEnabled) {
+    if (![self.dataSource respondsToSelector:@selector(numberOfItemsInCarouselView:)]) return;
+
+    NSInteger count = [self.dataSource numberOfItemsInCarouselView:self];
+    if (_autoLoop && count > 1) {
         [self setupTimer];
     }
 }
@@ -166,8 +180,10 @@
 #pragma mark - Private
 
 - (void)setupTimer {
-    _timer = [NSTimer scheduledTimerWithTimeInterval:_loopTimeInterval target:self selector:@selector(timerAction:) userInfo:nil repeats:YES];
-    [[NSRunLoop currentRunLoop] addTimer:_timer forMode:_runloopMode];
+    if (!_timer) {
+        _timer = [NSTimer scheduledTimerWithTimeInterval:_loopTimeInterval target:self selector:@selector(timerAction:) userInfo:nil repeats:YES];
+        [[NSRunLoop currentRunLoop] addTimer:_timer forMode:_runloopMode];
+    }
 }
 
 - (void)resetTimer {
@@ -176,11 +192,14 @@
 }
 
 - (void)timerAction:(NSTimer *)timer {
-    if (self.collectionView.scrollEnabled) {
+    if (![self.dataSource respondsToSelector:@selector(numberOfItemsInCarouselView:)]) return;
+
+    NSInteger itemNumber = [self.dataSource numberOfItemsInCarouselView:self];
+    if (itemNumber > 1) {
         NSIndexPath *currentIndexPath = [self.collectionView indexPathForItemAtPoint:self.collectionView.contentOffset];
         NSInteger nextIndex = _scrollStyle == OKCarouselViewScrollStylePositive
         ? (currentIndexPath.item + 1) : (currentIndexPath.item - 1);
-        
+
         NSIndexPath *nextIndexPath = [NSIndexPath indexPathForItem:nextIndex inSection:0];
         [self.collectionView scrollToItemAtIndexPath:nextIndexPath
                                     atScrollPosition:UICollectionViewScrollPositionNone
@@ -202,12 +221,15 @@
 
 - (void)initialCollectionViewIndex {
     if ([self.dataSource respondsToSelector:@selector(numberOfItemsInCarouselView:)]) {
-        NSInteger count = [self.dataSource numberOfItemsInCarouselView:self];
-        if (count > 1) {
+        NSInteger itemNumber = [self.dataSource numberOfItemsInCarouselView:self];
+        if (itemNumber > 1) {
             [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:1 inSection:0]
                                         atScrollPosition:UICollectionViewScrollPositionNone
                                                 animated:NO];
         }
+    }
+    if ([self.delegate respondsToSelector:@selector(carouselView:didScrollAtIndex:)]) {
+        [self.delegate carouselView:self didScrollAtIndex:0];
     }
 }
 
@@ -247,13 +269,19 @@
 #pragma mark - UICollectionViewDelegate, UICollectionViewDataSource
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    NSAssert([self.dataSource respondsToSelector:@selector(numberOfItemsInCarouselView:)], @"must be responds the numberOfItemsInCarouselView: selector!");
+
     _metaDataCount = [self.dataSource numberOfItemsInCarouselView:self];
     _finalDataCount = _metaDataCount > 1 ? _metaDataCount + 2 : _metaDataCount;
-    collectionView.scrollEnabled = _metaDataCount > 1 ? YES : NO;
+    if (_metaDataCount <= 1) {
+        collectionView.scrollEnabled = NO;
+    }
     return _finalDataCount;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    NSAssert([self.dataSource respondsToSelector:@selector(carouselView:cellForItemAtIndex:)], @"must be responds the carouselView:cellForItemAtIndex: selector!");
+
     NSInteger index = [self convertIndexPathToIndex:indexPath];
     return [self.dataSource carouselView:self cellForItemAtIndex:index];
 }
@@ -292,7 +320,6 @@
 #pragma mark - UIScrollViewDelegate
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    if (!self.collectionView.scrollEnabled) return;
     
     NSIndexPath *scrollIndexPath = [self.collectionView indexPathForItemAtPoint:scrollView.contentOffset];
     NSInteger scrollIndex = [self convertIndexPathToIndex:scrollIndexPath];
@@ -304,28 +331,28 @@
     }
     
     // Control Loop
-    NSIndexPath *indexPath;
+    CGPoint point = CGPointZero;
     if (_scrollDirection == OKCarouselViewScrollDirectionHorizontal) {
         if (scrollView.contentOffset.x <= 0) {
-            indexPath = [NSIndexPath indexPathForItem:(_finalDataCount - 2) inSection:0];
+            point = CGPointMake(((_finalDataCount - 2) * self.collectionView.bounds.size.width), 0);
         }
         else if (scrollView.contentOffset.x >= ((_finalDataCount - 1) * self.collectionView.bounds.size.width)) {
-            indexPath = [NSIndexPath indexPathForItem:1 inSection:0];
+            point = CGPointMake(self.collectionView.bounds.size.width, 0);
         }
     }
     else if (_scrollDirection == OKCarouselViewScrollDirectionVertical) {
         if (scrollView.contentOffset.y <= 0) {
-            indexPath = [NSIndexPath indexPathForItem:(_finalDataCount - 2) inSection:0];
+            point = CGPointMake(0, (_finalDataCount - 2) * self.collectionView.bounds.size.height);
         }
         else if (scrollView.contentOffset.y >= ((_finalDataCount - 1) * self.collectionView.bounds.size.height)) {
-            indexPath = [NSIndexPath indexPathForItem:1 inSection:0];
+            point = CGPointMake(0, self.collectionView.bounds.size.height);
         }
     }
-    if (indexPath) {
-        [self.collectionView scrollToItemAtIndexPath:indexPath
-                                    atScrollPosition:UICollectionViewScrollPositionNone
-                                            animated:NO];
+    
+    if (!CGPointEqualToPoint(point, CGPointZero)) {
+        self.collectionView.contentOffset = point;
     }
+
 }
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {

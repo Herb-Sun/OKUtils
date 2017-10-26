@@ -5,7 +5,7 @@
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -89,7 +89,7 @@
                     </connections>
                 </button>
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qz9-JS-MAI" customClass="OKCarouselView">
-                    <rect key="frame" x="36" y="200" width="311" height="128"/>
+                    <rect key="frame" x="36" y="200" width="311" height="100"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.043658279869999997" green="1" blue="0.0038511719480000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <userDefinedRuntimeAttributes>
@@ -100,6 +100,7 @@
                         <userDefinedRuntimeAttribute type="number" keyPath="scrollDirection">
                             <integer key="value" value="1"/>
                         </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="scrollEnabled" value="NO"/>
                     </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="bzN-dF-jCn"/>
