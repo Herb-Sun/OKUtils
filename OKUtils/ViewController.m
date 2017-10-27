@@ -13,7 +13,7 @@
 #import "OKShareViewController.h"
 #import "OKUtils.h"
 #import "TestCarouselViewController.h"
-
+#import "TestTableViewController.h"
 @interface ViewController ()
 
 @end
@@ -56,6 +56,10 @@
 }
 - (IBAction)testCarousel:(id)sender {
     TestCarouselViewController *testVc = [[TestCarouselViewController alloc] init];
+    [self presentViewController:testVc animated:YES completion:nil];
+}
+- (IBAction)testTableView:(id)sender {
+    TestTableViewController *testVc = [[TestTableViewController alloc] init];
     [self presentViewController:testVc animated:YES completion:nil];
 }
 

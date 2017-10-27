@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TestTableViewCell" rowHeight="100" id="KGk-i7-Jjw" customClass="TestTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="93"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="92.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bAz-VG-Am4" customClass="OKCarouselView">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="92.5"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="autoLoop" value="YES"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="loopTimeInterval">
+                                <real key="value" value="2"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                        <connections>
+                            <outlet property="dataSource" destination="-1" id="uVW-tG-NY4"/>
+                            <outlet property="delegate" destination="-1" id="k2Q-UL-PGN"/>
+                        </connections>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="bAz-VG-Am4" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Aml-r6-Lg6"/>
+                    <constraint firstItem="bAz-VG-Am4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="G3I-n7-n9Z"/>
+                    <constraint firstAttribute="trailing" secondItem="bAz-VG-Am4" secondAttribute="trailing" id="Hca-TJ-mfn"/>
+                    <constraint firstAttribute="bottom" secondItem="bAz-VG-Am4" secondAttribute="bottom" id="lcd-ty-gSM"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="carouselView" destination="bAz-VG-Am4" id="jOS-3V-8Kk"/>
+            </connections>
+            <point key="canvasLocation" x="-83" y="-103"/>
+        </tableViewCell>
+    </objects>
+</document>

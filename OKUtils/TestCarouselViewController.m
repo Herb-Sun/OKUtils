@@ -29,7 +29,6 @@
 //    _carouselView.delegate = self;
 //    _carouselView.dataSource = self;
 //    _carouselView.autoLoop = YES;
-    _carouselView.scrollDirection = OKCarouselViewScrollDirectionVertical;
     _carouselView.scrollStyle = OKCarouselViewScrollStylePositive;
     
     [_carouselView registerClass:[TestCarouselViewCell class] forCellWithReuseIdentifier:NSStringFromClass(TestCarouselViewCell.class)];

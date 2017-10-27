@@ -11,6 +11,9 @@
 		04454D9C1F61242C0062EBC9 /* OKUtils_NSArrayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 04454D9B1F61242C0062EBC9 /* OKUtils_NSArrayTests.m */; };
 		0450DC031F50254200D0E041 /* OKUtils_NSData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0450DC021F50254200D0E041 /* OKUtils_NSData.m */; };
 		0450DC061F53FE4200D0E041 /* OKUtils_NSUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 0450DC051F53FE4200D0E041 /* OKUtils_NSUserDefaults.m */; };
+		048E27071FA1DE7000B565DD /* TestTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 048E27061FA1DE7000B565DD /* TestTableViewController.m */; };
+		048E270B1FA1DE8900B565DD /* TestTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 048E27091FA1DE8900B565DD /* TestTableViewCell.m */; };
+		048E270C1FA1DE8900B565DD /* TestTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 048E270A1FA1DE8900B565DD /* TestTableViewCell.xib */; };
 		04C625B41F9DFB6100116F93 /* OKCarouselView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C625B31F9DFB6100116F93 /* OKCarouselView.m */; };
 		04C625B81F9EE3AA00116F93 /* TestCarouselViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C625B61F9EE3AA00116F93 /* TestCarouselViewController.m */; };
 		04C625B91F9EE3AA00116F93 /* TestCarouselViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04C625B71F9EE3AA00116F93 /* TestCarouselViewController.xib */; };
@@ -69,6 +72,11 @@
 		0450DC021F50254200D0E041 /* OKUtils_NSData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OKUtils_NSData.m; sourceTree = "<group>"; };
 		0450DC041F53FE4200D0E041 /* OKUtils_NSUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OKUtils_NSUserDefaults.h; sourceTree = "<group>"; };
 		0450DC051F53FE4200D0E041 /* OKUtils_NSUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OKUtils_NSUserDefaults.m; sourceTree = "<group>"; };
+		048E27051FA1DE7000B565DD /* TestTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestTableViewController.h; sourceTree = "<group>"; };
+		048E27061FA1DE7000B565DD /* TestTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestTableViewController.m; sourceTree = "<group>"; };
+		048E27081FA1DE8900B565DD /* TestTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestTableViewCell.h; sourceTree = "<group>"; };
+		048E27091FA1DE8900B565DD /* TestTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestTableViewCell.m; sourceTree = "<group>"; };
+		048E270A1FA1DE8900B565DD /* TestTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestTableViewCell.xib; sourceTree = "<group>"; };
 		04C625B21F9DFB6100116F93 /* OKCarouselView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OKCarouselView.h; sourceTree = "<group>"; };
 		04C625B31F9DFB6100116F93 /* OKCarouselView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OKCarouselView.m; sourceTree = "<group>"; };
 		04C625B61F9EE3AA00116F93 /* TestCarouselViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestCarouselViewController.m; sourceTree = "<group>"; };
@@ -210,6 +218,11 @@
 				04F00FBA1F4D2C60003DF5AA /* AppDelegate.m */,
 				04F00FBC1F4D2C60003DF5AA /* ViewController.h */,
 				04F00FBD1F4D2C60003DF5AA /* ViewController.m */,
+				048E27051FA1DE7000B565DD /* TestTableViewController.h */,
+				048E27061FA1DE7000B565DD /* TestTableViewController.m */,
+				048E27081FA1DE8900B565DD /* TestTableViewCell.h */,
+				048E27091FA1DE8900B565DD /* TestTableViewCell.m */,
+				048E270A1FA1DE8900B565DD /* TestTableViewCell.xib */,
 				04C625BB1F9EE4B900116F93 /* TestCarouselViewController.h */,
 				04C625B61F9EE3AA00116F93 /* TestCarouselViewController.m */,
 				04C625B71F9EE3AA00116F93 /* TestCarouselViewController.xib */,
@@ -455,6 +468,7 @@
 				04C625B91F9EE3AA00116F93 /* TestCarouselViewController.xib in Resources */,
 				04F00FC61F4D2C60003DF5AA /* LaunchScreen.storyboard in Resources */,
 				04F00FC31F4D2C60003DF5AA /* Assets.xcassets in Resources */,
+				048E270C1FA1DE8900B565DD /* TestTableViewCell.xib in Resources */,
 				04F00FC11F4D2C60003DF5AA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -596,6 +610,8 @@
 				04E196B91F66AB5D00F7BEAA /* OKShareViewController.m in Sources */,
 				04F010EF1F4FF359003DF5AA /* OKUtils_NSURL.m in Sources */,
 				0450DC061F53FE4200D0E041 /* OKUtils_NSUserDefaults.m in Sources */,
+				048E270B1FA1DE8900B565DD /* TestTableViewCell.m in Sources */,
+				048E27071FA1DE7000B565DD /* TestTableViewController.m in Sources */,
 				04DF59D51F972D070069B8C5 /* OKUtils_NSDate.m in Sources */,
 				04F00FBE1F4D2C60003DF5AA /* ViewController.m in Sources */,
 				4300DAAA1F9E4E7900792004 /* TestCarouselViewCell.m in Sources */,

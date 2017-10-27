@@ -48,7 +48,7 @@
 
 - (void)setupInitialized {
     
-    _scrollDirection = OKCarouselViewScrollDirectionVertical;
+    _scrollDirection = OKCarouselViewScrollDirectionHorizontal;
     _scrollStyle = OKCarouselViewScrollStylePositive;
     _scrollEnabled = YES;
     _autoLoop = NO;
@@ -56,10 +56,6 @@
     _runloopMode = NSDefaultRunLoopMode;
     
     [self addSubview:self.collectionView];
-    if ([self.collectionView.collectionViewLayout isKindOfClass:[UICollectionViewFlowLayout class]]) {
-        UICollectionViewFlowLayout *flowLayout = (UICollectionViewFlowLayout *)self.collectionView.collectionViewLayout;
-        flowLayout.scrollDirection = _scrollDirection;
-    }
 }
 
 - (void)setupNotificationAndObserver {
@@ -74,8 +70,8 @@
                                                object:nil];
     
     _runLoopObserver = CFRunLoopObserverCreateWithHandler(CFAllocatorGetDefault(),
-                                                          kCFRunLoopAllActivities,
-                                                          YES,
+                                                          kCFRunLoopBeforeTimers | kCFRunLoopExit,
+                                                          true,
                                                           0,
                                                           ^(CFRunLoopObserverRef observer, CFRunLoopActivity activity)
     {
@@ -100,6 +96,7 @@
     self.collectionView.frame = self.bounds;
     if ([self.collectionView.collectionViewLayout isKindOfClass:[UICollectionViewFlowLayout class]]) {
         UICollectionViewFlowLayout *flowLayout = (UICollectionViewFlowLayout *)self.collectionView.collectionViewLayout;
+        flowLayout.scrollDirection = _scrollDirection;
         flowLayout.itemSize = self.collectionView.bounds.size;
     }
 
@@ -164,8 +161,8 @@
 - (void)startLoop {
     if (![self.dataSource respondsToSelector:@selector(numberOfItemsInCarouselView:)]) return;
 
-    NSInteger count = [self.dataSource numberOfItemsInCarouselView:self];
-    if (_autoLoop && count > 1) {
+    NSInteger itemNumber = [self.dataSource numberOfItemsInCarouselView:self];
+    if (_autoLoop && itemNumber > 1) {
         [self setupTimer];
     }
 }
@@ -352,7 +349,6 @@
     if (!CGPointEqualToPoint(point, CGPointZero)) {
         self.collectionView.contentOffset = point;
     }
-
 }
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {

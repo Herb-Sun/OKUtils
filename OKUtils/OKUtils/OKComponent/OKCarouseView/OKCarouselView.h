@@ -50,7 +50,7 @@ typedef NS_ENUM(NSInteger, OKCarouselViewScrollStyle) {
 
 IB_DESIGNABLE @interface OKCarouselView : UIView
 
-@property (nonatomic, assign) IBInspectable OKCarouselViewScrollDirection scrollDirection; ///< default is OKCarouselViewScrollDirectionVertical
+@property (nonatomic, assign) IBInspectable OKCarouselViewScrollDirection scrollDirection; ///< default is OKCarouselViewScrollDirectionHorizontal
 
 @property (nonatomic, assign) IBInspectable OKCarouselViewScrollStyle scrollStyle; ///< default is OKCarouselViewScrollStylePositive
 
