@@ -1,8 +1,7 @@
 //
-//  OKCarouselView.h
-//  OKUtils
+//  OKCarouselView
 //
-//  Created by MAC on 2017/10/23.
+//  Created by herb
 //  Copyright © 2017年 HERB. All rights reserved.
 //
 
@@ -54,8 +53,8 @@ IB_DESIGNABLE @interface OKCarouselView : UIView
 
 @property (nonatomic, assign) IBInspectable OKCarouselViewScrollStyle scrollStyle; ///< default is OKCarouselViewScrollStylePositive
 
-@property (nonatomic, weak) IBOutlet __nullable id <OKCarouselViewDelegate> delegate;
-@property (nonatomic, weak) IBOutlet __nullable id <OKCarouselViewDataSource> dataSource;
+@property (nonatomic, weak) IBOutlet id <OKCarouselViewDelegate> delegate;
+@property (nonatomic, weak) IBOutlet id <OKCarouselViewDataSource> dataSource;
 
 @property(nonatomic,getter=isScrollEnabled) IBInspectable BOOL scrollEnabled; ///< default YES. turn off any dragging temporarily
 @property (nonatomic, assign, getter=isAutoLoop) IBInspectable BOOL autoLoop; ///< default is NO

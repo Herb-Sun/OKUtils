@@ -15,6 +15,7 @@ PODS:
   - BlocksKit/UIKit (2.2.5):
     - BlocksKit/Core
     - BlocksKit/DynamicDelegate
+  - FXPageControl (1.5)
   - SDWebImage (4.1.0):
     - SDWebImage/Core (= 4.1.0)
   - SDWebImage/Core (4.1.0)
@@ -32,6 +33,7 @@ PODS:
 DEPENDENCIES:
   - Aspects
   - BlocksKit
+  - FXPageControl
   - SDWebImage
   - SVProgressHUD
   - XAspect
@@ -40,11 +42,12 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
   BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
+  FXPageControl: 97620412515365d10a3282ec0660f49f6401a8f0
   SDWebImage: 0e435c14e402a6730315a0fb79f95e68654d55a4
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
   XAspect: db50bf487f92dbb8557a7a5365556966c8493af8
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: a66029fff5c8afd71f90bc5c91d44937391e91b2
+PODFILE CHECKSUM: 5c8a053e086b788621d572307d9dfd757f8ae1a5
 
 COCOAPODS: 1.3.1

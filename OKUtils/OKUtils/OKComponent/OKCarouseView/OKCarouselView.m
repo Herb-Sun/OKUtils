@@ -1,8 +1,7 @@
 //
-//  OKCarouselView.m
-//  OKUtils
+//  OKCarouselView
 //
-//  Created by MAC on 2017/10/23.
+//  Created by herb
 //  Copyright © 2017年 HERB. All rights reserved.
 //
 
@@ -88,7 +87,6 @@
     });
     CFRunLoopAddObserver(CFRunLoopGetCurrent(), _runLoopObserver, kCFRunLoopDefaultMode);
     CFRelease(_runLoopObserver);
-    
 }
 
 - (void)layoutSubviews {

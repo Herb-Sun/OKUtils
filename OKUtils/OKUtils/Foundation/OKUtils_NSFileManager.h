@@ -14,8 +14,11 @@ FOUNDATION_EXTERN NSArray *OKAllFilesByPath(NSString *path);
 FOUNDATION_EXTERN BOOL OKCreateFile(NSString *path, NSString *fileName);
 /// 在path目录下创建文件夹
 FOUNDATION_EXTERN BOOL OKCreateDirectory(NSString *path, NSString *dirName);
+
 /// 计算文件夹size
 FOUNDATION_EXTERN unsigned long long OKFolderSize(NSString *folderPath);
+/// 计算应用bundle大小
+FOUNDATION_EXTERN unsigned long long OKApplicationSize(void);
 
 /// 读取文件
 FOUNDATION_EXTERN NSData *OKReadFile(NSString *path, NSString *fileName);
