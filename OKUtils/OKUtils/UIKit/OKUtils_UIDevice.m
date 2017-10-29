@@ -262,7 +262,6 @@ float OKBatteryLevel(void)
     return deviceLevel;
 }
 
-
 NSString *OKIPAddress(void)
 {
     NSString *address = @"";
@@ -417,11 +416,8 @@ NSUInteger OKPhysicalRamSize(void) { return __OKGetSystemInfo(HW_MEMSIZE); }
 /// 内存大小
 NSUInteger OKTotalMemorySize(void) { return __OKGetSystemInfo(HW_PHYSMEM); }
 
-
-
-
-
-long long OKFreeDiskSpace(void) {
+long long OKFreeDiskSpace(void)
+{
     struct statfs buf;
     long long freespace;
     freespace = 0;
@@ -431,7 +427,8 @@ long long OKFreeDiskSpace(void) {
     return freespace;
 }
 
-long long OKTotalDiskSpace(void) {
+long long OKTotalDiskSpace(void)
+{
     struct statfs buf;
     long long     totalspace;
     totalspace = 0;
