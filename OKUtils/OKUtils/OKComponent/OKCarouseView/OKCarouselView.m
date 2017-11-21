@@ -13,6 +13,7 @@
 @interface OKCarouselView ()<UICollectionViewDelegate, UICollectionViewDataSource>
 {
     @private
+    BOOL      _initialIndexNeeded;
     NSInteger _metaDataCount;
     NSInteger _finalDataCount;
     NSInteger _lastestIndex;
@@ -53,6 +54,7 @@
     _autoLoop = NO;
     _loopTimeInterval = 3.0;
     _runloopMode = NSDefaultRunLoopMode;
+    _initialIndexNeeded = YES;
     
     [self addSubview:self.collectionView];
 }
@@ -91,14 +93,23 @@
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    self.collectionView.frame = self.bounds;
+    
+    if (!CGRectEqualToRect(self.collectionView.frame, self.bounds)) {
+        self.collectionView.frame = self.bounds;
+    }
+    
     if ([self.collectionView.collectionViewLayout isKindOfClass:[UICollectionViewFlowLayout class]]) {
         UICollectionViewFlowLayout *flowLayout = (UICollectionViewFlowLayout *)self.collectionView.collectionViewLayout;
-        flowLayout.scrollDirection = _scrollDirection;
-        flowLayout.itemSize = self.collectionView.bounds.size;
+        if ((NSInteger)flowLayout.scrollDirection != (NSInteger)_scrollDirection) {
+            flowLayout.scrollDirection = _scrollDirection;
+        }
+        if (!CGSizeEqualToSize(flowLayout.itemSize, self.collectionView.bounds.size)) {
+            flowLayout.itemSize = self.collectionView.bounds.size;
+        }
     }
-
-    [self initialCollectionViewIndex];
+    if (_initialIndexNeeded) {
+        [self initialCollectionViewIndex];
+    }
 }
 
 - (void)willMoveToSuperview:(UIView *)newSuperview {
@@ -190,7 +201,7 @@
     if (![self.dataSource respondsToSelector:@selector(numberOfItemsInCarouselView:)]) return;
 
     NSInteger itemNumber = [self.dataSource numberOfItemsInCarouselView:self];
-    if (itemNumber > 1) {
+    if (itemNumber > 1 && self.collectionView.visibleCells.count > 0) {
         NSIndexPath *currentIndexPath = [self.collectionView indexPathForItemAtPoint:self.collectionView.contentOffset];
         NSInteger nextIndex = _scrollStyle == OKCarouselViewScrollStylePositive
         ? (currentIndexPath.item + 1) : (currentIndexPath.item - 1);
@@ -215,13 +226,14 @@
 }
 
 - (void)initialCollectionViewIndex {
-    if ([self.dataSource respondsToSelector:@selector(numberOfItemsInCarouselView:)]) {
-        NSInteger itemNumber = [self.dataSource numberOfItemsInCarouselView:self];
-        if (itemNumber > 1) {
-            [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:1 inSection:0]
-                                        atScrollPosition:UICollectionViewScrollPositionNone
-                                                animated:NO];
+    if (_metaDataCount > 1) {
+        if (_scrollDirection == OKCarouselViewScrollDirectionHorizontal) {
+            self.collectionView.contentOffset = CGPointMake(self.collectionView.bounds.size.width, 0);
         }
+        else if (_scrollDirection == OKCarouselViewScrollDirectionVertical) {
+            self.collectionView.contentOffset = CGPointMake(0, self.collectionView.bounds.size.height);
+        }
+        _initialIndexNeeded = NO;
     }
     if ([self.delegate respondsToSelector:@selector(carouselView:didScrollAtIndex:)]) {
         [self.delegate carouselView:self didScrollAtIndex:0];
@@ -370,6 +382,7 @@
         _collectionView.delegate = self;
         _collectionView.dataSource = self;
         _collectionView.pagingEnabled = YES;
+        _collectionView.backgroundColor = [UIColor whiteColor];
         _collectionView.showsVerticalScrollIndicator = NO;
         _collectionView.showsHorizontalScrollIndicator = NO;
     }

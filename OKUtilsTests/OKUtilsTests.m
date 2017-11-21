@@ -26,8 +26,47 @@
 }
 
 - (void)testExample {
-    // This is an example of a functional test case.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
+//~!@#$%^&*()-_=+[]{}|\;:'",.<>?/
+    // !"#$%&'()*+,-./ 33-47
+    // {|}~ 123-126
+    // [\]^_ 91-95
+    // :;<=>?@ 58-64
+    // 0-9 48-57
+    // A-Z 65-90
+    // a-z 97-122
+    
+    NSString *value = @"dkdk jdjdj";
+    
+    for (int i = 0; i < value.length - 1; i++) {
+        unichar ch = [value characterAtIndex:i];
+        if (ch > 126 || ch < 33) {
+            NSLog(@"**不符合字符--%c", ch);
+        } else {
+            NSLog(@"符合字符====%c", ch);
+        }
+    }
+    
+    
+    NSString *reg = @"\s+";
+    NSPredicate *pre = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", reg];
+    BOOL result = [pre evaluateWithObject:value];
+    NSLog(@"--------%@", @(result));
+}
+
+- (void)testAAA {
+    NSString *value = @"#$%^&*(5";
+    
+    NSArray *regs = @[@"^[0-9]+$",
+                      @"^[A-Za-z]+$",
+                      @"^[~!@#\\$%\\^&*()\\-_=\\+\\[\\]\\{\\}\\|\\;:'\",.<>?/]+$"];
+    for (NSString *regex in regs) {
+        
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regex];
+        if ([predicate evaluateWithObject:value]) {
+            NSLog(@"%@--字母、数字及符号至少包含两种", regex);
+        }
+    }
+    
 }
 
 - (void)testPerformanceExample {

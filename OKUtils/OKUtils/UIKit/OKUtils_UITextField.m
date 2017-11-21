@@ -11,21 +11,44 @@
 
 @implementation UITextField (OKUtils_Category)
 
-- (BOOL)isMenuItemDisabled {
-    return [objc_getAssociatedObject(self, _cmd) boolValue];
+- (OKMenuItemDisabledType)menuItemDisabledType {
+    return [objc_getAssociatedObject(self, _cmd) integerValue];
 }
 
-- (void)setMenuItemDisabled:(BOOL)menuItemDisabled {
-    objc_setAssociatedObject(self, @selector(isMenuItemDisabled), @(menuItemDisabled), OBJC_ASSOCIATION_ASSIGN);
+- (void)setMenuItemDisabledType:(OKMenuItemDisabledType)menuItemDisabledType {
+    objc_setAssociatedObject(self, @selector(menuItemDisabledType), @(menuItemDisabledType), OBJC_ASSOCIATION_ASSIGN);
 }
 
 - (BOOL)canPerformAction:(SEL)action withSender:(id)sender {
-    if (self.isMenuItemDisabled || self.isSecureTextEntry) {
-        UIMenuController *menuCtrl = [UIMenuController sharedMenuController];
-        if (menuCtrl) {
-            menuCtrl.menuVisible = NO;
+    
+    if (self.isSecureTextEntry || (self.menuItemDisabledType & OKMenuItemDisabledTypeAll)) {
+        [UIMenuController sharedMenuController].menuVisible = NO;
+    }
+    else {
+        if (action == @selector(cut:)
+            && (self.menuItemDisabledType & OKMenuItemDisabledTypeCut)) {
+            return NO;
         }
-        return NO;
+        else if (action == @selector(copy:)
+                 && (self.menuItemDisabledType & OKMenuItemDisabledTypeCopy)) {
+            return NO;
+        }
+        else if (action == @selector(paste:)
+                 && (self.menuItemDisabledType & OKMenuItemDisabledTypePaste)) {
+            return NO;
+        }
+        else if (action == @selector(delete:)
+                 && (self.menuItemDisabledType & OKMenuItemDisabledTypeDelete)) {
+            return NO;
+        }
+        else if (action == @selector(select:)
+                 && (self.menuItemDisabledType & OKMenuItemDisabledTypeSelect)) {
+            return NO;
+        }
+        else if (action == @selector(selectAll:)
+                 && (self.menuItemDisabledType & OKMenuItemDisabledTypeSelectAll)) {
+            return NO;
+        }
     }
     return [super canPerformAction:action withSender:sender];
 }
