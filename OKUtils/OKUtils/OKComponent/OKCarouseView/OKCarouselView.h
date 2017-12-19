@@ -53,10 +53,10 @@ IB_DESIGNABLE @interface OKCarouselView : UIView
 
 @property (nonatomic, assign) IBInspectable OKCarouselViewScrollStyle scrollStyle; ///< default is OKCarouselViewScrollStylePositive
 
-@property (nonatomic, weak) IBOutlet id <OKCarouselViewDelegate> delegate;
-@property (nonatomic, weak) IBOutlet id <OKCarouselViewDataSource> dataSource;
+@property (nonatomic, weak) IBOutlet __nullable id <OKCarouselViewDelegate> delegate;
+@property (nonatomic, weak) IBOutlet __nullable id <OKCarouselViewDataSource> dataSource;
 
-@property(nonatomic,getter=isScrollEnabled) IBInspectable BOOL scrollEnabled; ///< default YES. turn off any dragging temporarily
+@property (nonatomic, getter=isScrollEnabled) IBInspectable BOOL scrollEnabled; ///< default YES. turn off any dragging temporarily
 @property (nonatomic, assign, getter=isAutoLoop) IBInspectable BOOL autoLoop; ///< default is NO
 @property (nonatomic, assign) IBInspectable CGFloat loopTimeInterval; ///< default is 3.0, Minimal is 0.25
 @property (nonatomic, copy) NSRunLoopMode runloopMode; ///< default is NSDefaultRunLoopMode

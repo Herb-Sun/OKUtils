@@ -30,7 +30,7 @@
 //    _carouselView.dataSource = self;
 //    _carouselView.autoLoop = YES;
     _carouselView.scrollStyle = OKCarouselViewScrollStylePositive;
-    
+    _carouselView.autoLoop = YES;
     [_carouselView registerClass:[TestCarouselViewCell class] forCellWithReuseIdentifier:NSStringFromClass(TestCarouselViewCell.class)];
     
 }

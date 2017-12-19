@@ -10,12 +10,12 @@
 #import <Foundation/Foundation.h>
 
 typedef NS_OPTIONS(NSInteger, OKMenuItemDisabledType) {
-    TNMenuItemDisabledTypeCut       = 1 << 0,
-    TNMenuItemDisabledTypeCopy      = 1 << 1,
-    TNMenuItemDisabledTypePaste     = 1 << 2,
-    TNMenuItemDisabledTypeDelete    = 1 << 3,
-    TNMenuItemDisabledTypeSelect    = 1 << 4,
-    TNMenuItemDisabledTypeSelectAll = 1 << 5,
+    OKMenuItemDisabledTypeCut       = 1 << 0,
+    OKMenuItemDisabledTypeCopy      = 1 << 1,
+    OKMenuItemDisabledTypePaste     = 1 << 2,
+    OKMenuItemDisabledTypeDelete    = 1 << 3,
+    OKMenuItemDisabledTypeSelect    = 1 << 4,
+    OKMenuItemDisabledTypeSelectAll = 1 << 5,
     OKMenuItemDisabledTypeAll       = 0xFF,
 };
 
