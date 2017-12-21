@@ -65,6 +65,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04319D301FEB4EF30066DE36 /* GlobalStarRateView.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = GlobalStarRateView.js; sourceTree = "<group>"; };
+		04319D311FEB4F030066DE36 /* GlobalAlertView.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = GlobalAlertView.js; sourceTree = "<group>"; };
+		04319D321FEB4F030066DE36 /* TNUButton.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = TNUButton.js; sourceTree = "<group>"; };
 		04454D981F611C520062EBC9 /* OKUtils_NSArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OKUtils_NSArray.h; sourceTree = "<group>"; };
 		04454D991F611C520062EBC9 /* OKUtils_NSArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OKUtils_NSArray.m; sourceTree = "<group>"; };
 		04454D9B1F61242C0062EBC9 /* OKUtils_NSArrayTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OKUtils_NSArrayTests.m; sourceTree = "<group>"; };
@@ -180,6 +183,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04319D2F1FEB4ED30066DE36 /* ReactNative */ = {
+			isa = PBXGroup;
+			children = (
+				04319D311FEB4F030066DE36 /* GlobalAlertView.js */,
+				04319D321FEB4F030066DE36 /* TNUButton.js */,
+				04319D301FEB4EF30066DE36 /* GlobalStarRateView.js */,
+			);
+			path = ReactNative;
+			sourceTree = "<group>";
+		};
 		04DF59D61F9741B70069B8C5 /* OKCarouseView */ = {
 			isa = PBXGroup;
 			children = (
@@ -333,6 +346,7 @@
 		04F0100D1F4EA6C1003DF5AA /* OKComponent */ = {
 			isa = PBXGroup;
 			children = (
+				04319D2F1FEB4ED30066DE36 /* ReactNative */,
 				04DF59D61F9741B70069B8C5 /* OKCarouseView */,
 				04F0100E1F4EAAD9003DF5AA /* OKShare */,
 			);
