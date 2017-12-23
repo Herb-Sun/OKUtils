@@ -16,6 +16,7 @@ target 'OKUtils' do
   pod 'BlocksKit'
   #pod 'OAStackView'
   pod 'FXPageControl'
+  pod 'MJExtension'
   
   target 'OKUtilsTests' do
     inherit! :search_paths
